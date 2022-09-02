@@ -1,9 +1,14 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import useTranslation from 'next-translate/useTranslation'
+import styles from 'styles/Home.module.css'
 
 const Home: NextPage = () => {
+  const { t } = useTranslation()
+
+  console.log(t)
+
   return (
     <div className={styles.container}>
       <Head>
@@ -13,10 +18,9 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
+        <h2>{t('common:Japanese')}</h2>
+        <h2>{t('common:English')}</h2>
+        <h2>{t('common:Korean')}</h2>
         <p className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code}>pages/index.tsx</code>
