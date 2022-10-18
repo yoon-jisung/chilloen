@@ -1,0 +1,63 @@
+import Screen from 'components/Screen'
+import { CategoryText, CategoryTitle } from 'pages'
+import Image from 'next/image'
+import styled from 'styled-components'
+import AboutUs1 from '../../public/images/about_us_1.jpg'
+import AboutUs2 from '../../public/images/about_us_2.jpg'
+
+const AboutUs = () => {
+  return (
+    <Screen style={{ bg: '#F6F6F6' }}>
+      <CategoryTitle>about us</CategoryTitle>
+      <CategoryText>칠로엔은 생각합니다.</CategoryText>
+      <Category>
+        <ImgWrapper>
+          <Image src={AboutUs1} alt="AboutUs1" width={560} height={280} />
+        </ImgWrapper>
+
+        <article>
+          <p>예술이란 누군가의 삶을 표현한 꿈이라고 생각합니다.</p>
+          <p>그 꿈은 우리 주변을 멤돌고, 다른이의 삶에</p>
+          <p>다름 꿈을 심어주기도 합니다.</p>
+        </article>
+      </Category>
+      <Category>
+        <article>
+          <p>수많은 예술가들이 꿈을 꾸고, 쫒고 또 동경합니다.</p>
+          <p>다만, 그들의 위대한 창조물들이 우리 주변에서</p>
+          <p>빛을 보기까지는 수많은 노력이 필요합니다.</p>
+          <br></br>
+          <p>그래서 저희 칠로엔은 존재합니다.</p>
+        </article>
+        <ImgWrapper>
+          <Image src={AboutUs2} alt="AboutUs2" width={560} height={280} />
+        </ImgWrapper>
+      </Category>
+    </Screen>
+  )
+}
+
+export default AboutUs
+
+const Category = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 84px;
+  width: 100%;
+  article {
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+
+    width: 560px;
+    font-size: ${({ theme }) => theme.fontSizes.xl};
+    text-align: start;
+  }
+
+  color: black;
+`
+const ImgWrapper = styled.div`
+  border-radius: 8px;
+  overflow: hidden;
+`

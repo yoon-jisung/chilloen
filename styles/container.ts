@@ -13,3 +13,13 @@ export const defaultContainer = css`
     border: 1px solid blue;
   }
 `
+export const defaultInputsStyle = css`
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  background: #f4f4f4;
+  border-radius: 8px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+`
