@@ -45,19 +45,44 @@ const Category = styled.div`
   align-items: center;
   margin-top: 84px;
   width: 100%;
+  color: black;
+
   article {
     font-style: normal;
     font-weight: 400;
     line-height: 30px;
-
     width: 560px;
     font-size: ${({ theme }) => theme.fontSizes.xl};
     text-align: start;
-  }
 
-  color: black;
+    @media screen and (max-width: 1280px) {
+      margin: 1rem 0;
+      text-align: center;
+    }
+  }
+  @media screen and (max-width: 1280px) {
+    flex-direction: column;
+    margin-top: 30px;
+  }
 `
 const ImgWrapper = styled.div`
   border-radius: 8px;
   overflow: hidden;
+  @media screen and (max-width: ${({ theme }) => theme.deviceSizes.tablet}) {
+    padding: 10px 2rem;
+    width: 460px;
+    height: 240px;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  @media screen and (max-width: ${({ theme }) => theme.deviceSizes.mobileL}) {
+    padding: 10px 2rem;
+    width: 320px;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  > * {
+    border-radius: 8px;
+  }
 `

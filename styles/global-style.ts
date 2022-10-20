@@ -34,12 +34,22 @@ export const GlobalStyles = createGlobalStyle`
         display: none;
     }
     html{
-        font-size: 16px;
-        -webkit-text-size-adjust: none;
-        font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;   
-        font-display: fallback;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
+      font-size: 16px;
+      -webkit-text-size-adjust: none;
+      font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;   
+      font-display: fallback;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      @media screen and (max-width: 1280px) {
+        font-size: 14px;
+      }
+
+      @media screen and (max-width: 720px) {
+        font-size: 12px;
+      }
+
+
+
     }
     button {
         background: none;

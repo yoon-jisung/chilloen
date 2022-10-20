@@ -6,13 +6,15 @@ import { GrLinkNext } from 'react-icons/gr'
 const Career = () => {
   return (
     <Container>
-      <Image src={CareerImg} />
+      <Image src={CareerImg} objectFit="cover" objectPosition="center" />
       <Texts>
         <h1>새로운 도전을,</h1>
         <h1>칠로엔과 함께 하고 싶지 않으신가요?</h1>
         <p>새로운 예술을, 위대한 창조를 , 삶을 표현할 꿈을 펼쳐주세요</p>
 
-        <GrLinkNextIcon>
+        <GrLinkNextIcon
+          onClick={() => window.open('https://chilloen.oopy.io/')}
+        >
           <GrLinkNext className="icon" />
         </GrLinkNextIcon>
       </Texts>
@@ -26,6 +28,11 @@ const Container = styled.div`
   width: 100vw;
   height: 540px;
   overflow: hidden;
+
+  @media screen and (max-width: ${({ theme }) => theme.deviceSizes.tabletL}) {
+    height: 100%;
+  }
+
   span {
     filter: blur(2px);
   }
@@ -51,7 +58,6 @@ const GrLinkNextIcon = styled.div<{ marginLeft?: string }>`
   border-radius: 50%;
   box-shadow: 0 0 0 1px #ffffff;
   padding: 2%;
-
   width: 54px;
   height: 54px;
   cursor: pointer;

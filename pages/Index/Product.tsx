@@ -17,7 +17,7 @@ const Product = () => {
     >
       <CategoryTitle>product</CategoryTitle>
       <CategoryText>칠로엔은 제시합니다.</CategoryText>
-      <SubTexts>
+      <SubTexts marginTop={16}>
         음악가 출신 대표와 누구보다 창작에 대한 열망이 컸던 아티스트 출신
         팀원들이 모였습니다.
       </SubTexts>
@@ -28,12 +28,15 @@ const Product = () => {
 
       <Icons>
         <IconCard>
-          <Image
-            src={oddYardIcon}
-            alt="oddYard Icon"
-            width={124}
-            height={124}
-          />
+          <ImgWrapper>
+            <Image
+              src={oddYardIcon}
+              alt="oddYard Icon"
+              // layout="fixed"
+              width={124}
+              height={124}
+            />
+          </ImgWrapper>
           <IconCardTexts>
             <p>또 다른 예술 세계</p>
             <h2>ODDYARD</h2>
@@ -43,12 +46,15 @@ const Product = () => {
           </GrLinkNextIcon>
         </IconCard>
         <IconCard>
-          <Image
-            src={keeneatIcon}
-            alt="keeneat Icon"
-            width={124}
-            height={124}
-          />
+          <ImgWrapper>
+            <Image
+              src={keeneatIcon}
+              alt="keeneat Icon"
+              // layout="fixed"
+              width={124}
+              height={124}
+            />
+          </ImgWrapper>
           <IconCardTexts>
             <p>무한한 가치의 인공지능 음악 파트너</p>
             <h2>KEENEAT</h2>
@@ -67,6 +73,7 @@ export default Product
 const Icons = styled.div`
   display: flex;
   justify-content: space-between;
+
   padding: ${({ theme }) => theme.paddings.xxxl} 0px;
   margin: ${({ theme }) => theme.margins.xxxl} 0px;
   @media screen and (max-width: 1280px) {
@@ -76,23 +83,39 @@ const Icons = styled.div`
 `
 
 const IconCard = styled.div`
-  width: 600px;
+  width: 500px;
   display: flex;
   align-items: center;
+  margin: 0 100px;
+  @media screen and (max-width: 1280px) {
+    margin: 2rem 0;
+    width: 400px;
+  }
+  @media screen and (max-width: ${({ theme }) => theme.deviceSizes.mobileL}) {
+    width: 320px;
+  }
 `
-
+const ImgWrapper = styled.div`
+  min-width: 124px;
+  min-height: 124px;
+  @media screen and (max-width: ${({ theme }) => theme.deviceSizes.mobileL}) {
+    max-width: 62px;
+    max-height: 62px;
+    min-width: 0px;
+    min-height: 0px;
+  }
+`
 const IconCardTexts = styled.div`
   width: 100%;
-  padding: ${({ theme }) => theme.paddings.base};
+  padding: 1rem 1rem 1rem 1.5rem;
   p {
-    font-style: normal;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 19px;
   }
   h2 {
     font-weight: 700;
-    font-size: 34px;
+    font-size: 2rem;
     line-height: 41px;
   }
 `
@@ -102,6 +125,12 @@ const GrLinkNextIcon = styled.div<{ marginLeft?: string }>`
   border-radius: 50%;
   box-shadow: 0 0 0 1px #606060;
   padding: 2%;
-  margin: 50px;
+  margin: 3rem;
   cursor: pointer;
+  @media screen and (max-width: 1280px) {
+    margin: 2.5rem;
+  }
+  @media screen and (max-width: ${({ theme }) => theme.deviceSizes.mobileL}) {
+    margin: 1rem;
+  }
 `

@@ -27,6 +27,7 @@ const Footer = () => {
           <Bar />
           <span>전화번호 02-6952-8716 </span> <Bar />
           <span>이메일 info@chilloen.com </span>
+          <span className="copy-right">COPYRIGHT(C) 2021 CHILLOEN.inc</span>
         </FooterTexts>
       </Container>
     </Screen>
@@ -36,22 +37,32 @@ const Footer = () => {
 export default Footer
 
 const Container = styled.footer`
-  width: 1200px;
-  > span {
-    display: inline;
-  }
-
-  > * {
-    text-align: start;
-    margin: 20px 0;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 16px;
-  }
+  width: 100%;
 `
 const FooterTexts = styled.div`
+  text-align: start;
+  position: relative;
+  margin: 20px 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+
   .bold-text {
     font-weight: 700;
+  }
+  .copy-right {
+    position: absolute;
+    right: 0;
+  }
+  @media screen and (max-width: ${({ theme }) => theme.deviceSizes.tabletL}) {
+    display: flex;
+    flex-direction: column;
+    * {
+      line-height: 30px;
+    }
+    .copy-right {
+      position: relative;
+    }
   }
 `
 const LogoImage = styled.span``
@@ -64,4 +75,7 @@ const Bar = styled.span`
   line-height: 10px;
   margin: 0px 6px;
   vertical-align: baseline;
+  @media screen and (max-width: ${({ theme }) => theme.deviceSizes.tabletL}) {
+    display: none;
+  }
 `

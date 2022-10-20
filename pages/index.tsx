@@ -7,6 +7,7 @@ import Product from 'pages/Index/Product'
 import News from 'pages/Index/News'
 import Career from 'pages/Index/Career'
 import ContactUs from 'pages/Index/Contact'
+import { calcRem } from 'styles/theme'
 
 const Home: NextPage = () => {
   return (
@@ -28,21 +29,28 @@ export const CategoryTitle = styled.h4`
   font-size: ${({ theme }) => theme.colors.xxl};
   padding: 20px 0;
   font-weight: 700;
-  font-size: 24px;
+  font-size: ${({ theme }) => theme.fontSizes.xxxl};
 `
 export const CategoryText = styled.div`
   color: ${({ theme }) => theme.colors.black};
-  font-family: 'Pretendard';
-  font-style: normal;
   font-weight: 700;
   font-size: ${({ theme }) => theme.fontSizes.titleSize};
   line-height: 48px;
 `
 
-export const SubTexts = styled.p`
-  font-style: normal;
+export const SubTexts = styled.p<{ marginTop?: number }>`
+  margin-top: ${({ marginTop }) => calcRem(marginTop || 0)};
   font-weight: 400;
-  font-size: 20px;
+  font-size: ${({ theme }) => theme.fontSizes.xl};
   line-height: 30px;
   text-align: center;
+
+  @media screen and (max-width: 1280px) {
+    font-size: ${({ theme }) => theme.fontSizes.base};
+    line-height: 20px;
+  }
+  @media screen and (max-width: ${({ theme }) => theme.deviceSizes.mobileL}) {
+    font-size: ${({ theme }) => theme.fontSizes.small};
+    line-height: 20px;
+  }
 `
