@@ -10,25 +10,24 @@ const AboutUs = () => {
     <Screen style={{ bg: '#F6F6F6' }}>
       <CategoryTitle>about us</CategoryTitle>
       <CategoryText>칠로엔은 생각합니다.</CategoryText>
-      <Category>
+      <Category flexDirection={'column'}>
         <ImgWrapper>
           <Image src={AboutUs1} alt="AboutUs1" width={560} height={280} />
         </ImgWrapper>
-
-        <article>
+        <Article mobileAlign={'start'}>
           <p>예술이란 누군가의 삶을 표현한 꿈이라고 생각합니다.</p>
           <p>그 꿈은 우리 주변을 멤돌고, 다른이의 삶에</p>
           <p>다름 꿈을 심어주기도 합니다.</p>
-        </article>
+        </Article>
       </Category>
-      <Category>
-        <article>
+      <Category flexDirection={'column-reverse'}>
+        <Article mobileAlign={'end'}>
           <p>수많은 예술가들이 꿈을 꾸고, 쫒고 또 동경합니다.</p>
           <p>다만, 그들의 위대한 창조물들이 우리 주변에서</p>
           <p>빛을 보기까지는 수많은 노력이 필요합니다.</p>
           <br></br>
           <p>그래서 저희 칠로엔은 존재합니다.</p>
-        </article>
+        </Article>
         <ImgWrapper>
           <Image src={AboutUs2} alt="AboutUs2" width={560} height={280} />
         </ImgWrapper>
@@ -39,39 +38,43 @@ const AboutUs = () => {
 
 export default AboutUs
 
-const Category = styled.div`
+const Category = styled.div<{ flexDirection: string }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 84px;
   width: 100%;
   color: black;
-
-  article {
-    font-style: normal;
-    font-weight: 400;
-    line-height: 30px;
-    width: 560px;
-    font-size: ${({ theme }) => theme.fontSizes.xl};
-    text-align: start;
-
-    @media screen and (max-width: 1280px) {
-      margin: 1rem 0;
-      text-align: center;
+  @media screen and (max-width: 1280px) {
+    flex-direction: ${({ flexDirection }) => flexDirection};
+    margin-top: 30px;
+    .row-reverse {
+      flex-direction: column-reverse !important;
     }
   }
+`
+const Article = styled.article<{ mobileAlign: string }>`
+  font-weight: 400;
+  line-height: 30px;
+  width: 560px;
+  font-size: ${({ theme }) => theme.fontSizes.xl};
+  text-align: start;
   @media screen and (max-width: 1280px) {
-    flex-direction: column;
-    margin-top: 30px;
+    padding: 10px 2rem;
+    margin: 1rem 0;
+    text-align: center;
+    width: 100%;
+    text-align: ${({ mobileAlign }) => mobileAlign};
   }
 `
 const ImgWrapper = styled.div`
   border-radius: 8px;
   overflow: hidden;
+
   @media screen and (max-width: ${({ theme }) => theme.deviceSizes.tablet}) {
     padding: 10px 2rem;
-    width: 460px;
-    height: 240px;
+    width: 100%;
+    height: auto;
     overflow: hidden;
     border-radius: 8px;
   }

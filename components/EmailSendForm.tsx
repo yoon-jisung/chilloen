@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { FieldValues, useForm } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
 import { defaultInputsStyle } from 'styles/container'
 import emailjs from 'emailjs-com'
@@ -13,8 +13,10 @@ const EmailSendForm = () => {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
+    reset,
   } = useForm()
   const form = useRef(null)
+
   const emailRegister = register('email', {
     required: { value: true, message: '이메일을 입력해주세요.' },
     pattern: { value: Regex.email, message: '이메일 형식을 입력해주세요.' },
@@ -38,11 +40,15 @@ const EmailSendForm = () => {
           'g4o88jyicc5209iNM',
         )
         .then(
-          (result) => {
-            console.log(result.text)
+          async () => {
+            await new Promise((r) => setTimeout(r, 1000))
+            alert('send email')
+            reset()
           },
-          (error) => {
-            console.dir(error)
+          async (error) => {
+            await new Promise((r) => setTimeout(r, 1000))
+            alert(error.text)
+            reset()
           },
         )
     }
