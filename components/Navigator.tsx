@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
 import chilloenLogo from '../public/images/logo.png'
 import chilloenWhiteLogo from '../public/images/logo_wh.png'
-import useScroll from 'hooks/UseScroll'
+import useScroll from 'hooks/useScrollY'
+import useView from 'hooks/useView'
 
 const Navigator = () => {
   const { scrollY } = useScroll()
+  const screenRef = useRef(null)
+  const [target, view] = useView(screenRef)
 
   const handleFoucsContactView = () => {
     const contactScreen = document.getElementById('contant-us') as HTMLElement
@@ -14,13 +17,13 @@ const Navigator = () => {
   }
 
   return (
-    <Container scrollY={scrollY}>
+    <Container scrollY={scrollY} ref={screenRef}>
       <Header>
         <Image
           src={scrollY > 60 ? chilloenLogo : chilloenWhiteLogo}
           alt="chilloen logo"
-          width={100}
-          height={40}
+          width={view.width > 460 ? 100 : 80}
+          height={view.width > 460 ? 40 : 32}
         />
         <div>
           <span>KR</span>

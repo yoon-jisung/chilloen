@@ -60,7 +60,7 @@ const EmailSendForm = () => {
         <Input
           {...nameRegister}
           className="first-child"
-          placeholder="NAME"
+          placeholder="Name"
           id="name"
           type="name"
         />
@@ -98,6 +98,12 @@ const Input = styled.input`
   height: 58px;
   margin-bottom: 1rem;
   padding: 14px 16px;
+  ::placeholder {
+    color: ${({ theme }) => theme.colors.grey400};
+    font-family: 'Pretendard';
+    font-size: 16px;
+    font-weight: 400;
+  }
 `
 const TextBox = styled.textarea`
   ${defaultInputsStyle};
@@ -105,6 +111,12 @@ const TextBox = styled.textarea`
   height: 248px;
   margin-bottom: 1rem;
   padding: 14px 16px;
+  ::placeholder {
+    color: ${({ theme }) => theme.colors.grey400};
+    font-family: 'Pretendard';
+    font-size: 16px;
+    font-weight: 400;
+  }
 `
 
 const SendButton = styled.input`
