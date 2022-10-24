@@ -12,7 +12,7 @@ const Layout = ({ children }: any) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         
         <meta name="naver-site-verification" content="fe14618c575d76620332f7b393dadeab47aa4ffd" />
-        <meta name="google-site-verification" content="i4i7wRgtkm4NE6eNlHtj6cDAhIl0eCtNPBJDGFim0IQ" />
+        <meta name="google-site-verification" content="13832HiZZ56rPWHrhg3ZCFg55Rpm8TuEYG_bnNXLDOo" />
 
         <link
           rel="shortcut icon"
