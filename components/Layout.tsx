@@ -10,6 +10,10 @@ const Layout = ({ children }: any) => {
         <title>chilloen</title>
         <meta name="description" content="chilloen" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        <meta name="naver-site-verification" content="fe14618c575d76620332f7b393dadeab47aa4ffd" />
+        <meta name="google-site-verification" content="i4i7wRgtkm4NE6eNlHtj6cDAhIl0eCtNPBJDGFim0IQ" />
+
         <link
           rel="shortcut icon"
           href="https://storage.googleapis.com/cdn.appres.org/premium/526275b161effcdce43ecf71a8f0abf0f826ba46/icons/chillorn_logo.ico"
