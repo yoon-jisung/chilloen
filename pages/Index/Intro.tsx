@@ -42,8 +42,8 @@ const Intro = () => {
       </Screen>
       <Screen>
         <CraveContainer>
-          <span>Crave,</span>
-          <span>Crave,</span>
+          <span>Crave, </span>
+          <span>Crave, </span>
           <span>Crave</span>
         </CraveContainer>
 
@@ -56,7 +56,7 @@ const Intro = () => {
 
 export default Intro
 const ImageStyle = styled(Image)`
-  @media screen and (max-width: ${({ theme }) => theme.deviceSizes.mobileL}) {
+  @media screen and (max-width: 480px) {
     width: 340px;
     min-height: 37px;
   }
@@ -66,36 +66,12 @@ const CraveContainer = styled.div`
   span {
     font-weight: 700;
     line-height: 100%;
-    :nth-child(1) {
-      font-size: 3.75rem;
-    }
-    :nth-child(2) {
-      font-size: 5rem;
-    }
-    :nth-child(3) {
-      font-size: 6.25rem;
-    }
+    font-size: 5rem;
     @media screen and (max-width: 540px) {
-      :nth-child(1) {
-        font-size: 2.75rem;
-      }
-      :nth-child(2) {
-        font-size: 4rem;
-      }
-      :nth-child(3) {
-        font-size: 5.25rem;
-      }
+      font-size: 4rem;
     }
-    @media screen and (max-width: 400px) {
-      :nth-child(1) {
-        font-size: 1.75rem;
-      }
-      :nth-child(2) {
-        font-size: 3rem;
-      }
-      :nth-child(3) {
-        font-size: 4.25rem;
-      }
+    @media screen and (max-width: 480px) {
+      font-size: 3rem;
     }
   }
 `
@@ -126,7 +102,7 @@ const FirstPageContainer = styled.div`
   span {
     margin: 0 10px;
   }
-  @media screen and (max-width: ${({ theme }) => theme.deviceSizes.mobileL}) {
+  @media screen and (max-width: 480px) {
     span {
       font-size: 3.75rem !important;
     }

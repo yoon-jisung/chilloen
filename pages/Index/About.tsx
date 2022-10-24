@@ -68,7 +68,7 @@ const Article = styled.article<{ mobileAlign: string }>`
     text-align: ${({ mobileAlign }) => mobileAlign};
   }
 
-  @media screen and (max-width: ${({ theme }) => theme.deviceSizes.mobileL}) {
+  @media screen and (max-width: 480px) {
     /* padding: 10px 2rem;
     margin: 1rem 0;
     text-align: center;
@@ -86,7 +86,7 @@ const ImgWrapper = styled.div`
     overflow: hidden;
     border-radius: 8px;
   }
-  @media screen and (max-width: ${({ theme }) => theme.deviceSizes.mobileL}) {
+  @media screen and (max-width: 480px) {
     width: 100%;
     height: 180px;
     overflow: hidden;

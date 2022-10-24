@@ -4,7 +4,7 @@ import { CategoryTitle, CategoryText, SubTexts } from 'pages'
 import styled from 'styled-components'
 import oddYardIcon from '../../public/images/oddyard_icon.png'
 import keeneatIcon from '../../public/images/keeneat_icon.png'
-import { GrLinkNext } from 'react-icons/gr'
+import { SlArrowRightCircle } from 'react-icons/sl'
 
 const Product = () => {
   return (
@@ -42,7 +42,7 @@ const Product = () => {
             <h2>ODDYARD</h2>
           </IconCardTexts>
           <GrLinkNextIcon marginLeft="62px">
-            <GrLinkNext />
+            <SlArrowRightCircle />
           </GrLinkNextIcon>
         </IconCard>
         <IconCard>
@@ -60,7 +60,7 @@ const Product = () => {
             <h2>KEENEAT</h2>
           </IconCardTexts>
           <GrLinkNextIcon marginLeft="62px">
-            <GrLinkNext />
+            <SlArrowRightCircle />
           </GrLinkNextIcon>
         </IconCard>
       </Icons>
@@ -89,16 +89,15 @@ const IconCard = styled.div`
   margin: 0 100px;
   @media screen and (max-width: 1280px) {
     margin: 2rem 0;
-    width: 400px;
   }
-  @media screen and (max-width: ${({ theme }) => theme.deviceSizes.mobileL}) {
+  @media screen and (max-width: 480px) {
     width: 320px;
   }
 `
 const ImgWrapper = styled.div`
   min-width: 124px;
   min-height: 124px;
-  @media screen and (max-width: ${({ theme }) => theme.deviceSizes.mobileL}) {
+  @media screen and (max-width: 480px) {
     max-width: 62px;
     max-height: 62px;
     min-width: 0px;
@@ -107,6 +106,7 @@ const ImgWrapper = styled.div`
 `
 const IconCardTexts = styled.div`
   width: 100%;
+  min-width: 270px;
   padding: 1rem 1rem 1rem 1.5rem;
   p {
     font-weight: 500;
@@ -118,19 +118,21 @@ const IconCardTexts = styled.div`
     font-size: 2rem;
     line-height: 41px;
   }
+  @media screen and (max-width: 480px) {
+    min-width: 210px;
+  }
 `
 
 const GrLinkNextIcon = styled.div<{ marginLeft?: string }>`
   margin-left: ${({ marginLeft }) => (marginLeft ? marginLeft : '0px')};
-  border-radius: 50%;
-  box-shadow: 0 0 0 1px #606060;
-  padding: 2%;
   margin: 3rem;
+  color: #606060;
+  font-size: 3rem;
   cursor: pointer;
   @media screen and (max-width: 1280px) {
     margin: 2.5rem;
   }
-  @media screen and (max-width: ${({ theme }) => theme.deviceSizes.mobileL}) {
+  @media screen and (max-width: 480px) {
     margin: 1rem;
   }
 `

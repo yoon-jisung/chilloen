@@ -11,7 +11,7 @@ import EmailSendForm from 'components/EmailSendForm'
 const ContactUs = () => {
   return (
     <Fragment>
-      <Screen style={{ bg: '#F6F6F6', screenHeight: 50 }}>
+      <Screen style={{ bg: '#F6F6F6', screenHeight: 50 }} id="contant-us">
         <CategoryTitle>Invertors</CategoryTitle>
         <ContactUsCardContainer>
           <Image

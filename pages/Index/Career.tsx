@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import CareerImg from '../../public/images/job_bg.png'
 import Image from 'next/image'
-import { GrLinkNext } from 'react-icons/gr'
+import { SlArrowRightCircle } from 'react-icons/sl'
 
 const Career = () => {
   return (
@@ -15,7 +15,7 @@ const Career = () => {
         <GrLinkNextIcon
           onClick={() => window.open('https://chilloen.oopy.io/')}
         >
-          <GrLinkNext className="icon" />
+          <SlArrowRightCircle className="icon" />
         </GrLinkNextIcon>
       </Texts>
     </Container>
@@ -50,18 +50,19 @@ const Texts = styled.div`
 `
 
 const GrLinkNextIcon = styled.div<{ marginLeft?: string }>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 2rem 0;
   margin-left: ${({ marginLeft }) => (marginLeft ? marginLeft : '0px')};
-  border-radius: 50%;
-  box-shadow: 0 0 0 1px #ffffff;
-  padding: 2%;
-  width: 54px;
-  height: 54px;
+  margin: 3rem;
+  color: #fff;
+  font-size: 3rem;
+  cursor: pointer;
+  @media screen and (max-width: 1280px) {
+    margin: 2.5rem;
+  }
+  @media screen and (max-width: 480px) {
+    margin: 1rem;
+  }
   cursor: pointer;
   .icon path {
-    stroke: #fff; //the color you want.
+    stroke: #fff;
   }
 `

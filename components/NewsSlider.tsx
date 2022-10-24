@@ -157,9 +157,6 @@ const CustomSlider = styled(Slider)`
     border-radius: 14px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   }
-
-  .slick-dots {
-  }
 `
 
 const Cards = styled.div``

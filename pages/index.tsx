@@ -49,7 +49,7 @@ export const SubTexts = styled.p<{ marginTop?: number }>`
     font-size: ${({ theme }) => theme.fontSizes.base};
     line-height: 20px;
   }
-  @media screen and (max-width: ${({ theme }) => theme.deviceSizes.mobileL}) {
+  @media screen and (max-width: 480px) {
     font-size: ${({ theme }) => theme.fontSizes.small};
     line-height: 20px;
   }

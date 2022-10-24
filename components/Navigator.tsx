@@ -8,6 +8,11 @@ import useScroll from 'hooks/UseScroll'
 const Navigator = () => {
   const { scrollY } = useScroll()
 
+  const handleFoucsContactView = () => {
+    const contactScreen = document.getElementById('contant-us') as HTMLElement
+    contactScreen.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
   return (
     <Container scrollY={scrollY}>
       <Header>
@@ -16,12 +21,14 @@ const Navigator = () => {
           alt="chilloen logo"
           width={100}
           height={40}
-        ></Image>
+        />
         <div>
           <span>KR</span>
           <Bar scrollY={scrollY} />
           <span>EN</span>
-          <ContactButton scrollY={scrollY}>contact us</ContactButton>
+          <ContactButton scrollY={scrollY} onClick={handleFoucsContactView}>
+            contact us
+          </ContactButton>
         </div>
       </Header>
     </Container>
@@ -88,10 +95,12 @@ const ContactButton = styled.button<{ scrollY: number }>`
   background-color: ${({ scrollY }) => (scrollY > 60 ? '#313553' : 'none')};
   border-radius: 8px;
   margin-left: 2.4rem;
-
   font-family: 'Pretendard';
   font-style: normal;
   font-weight: 400;
   font-size: 1rem;
   line-height: 19px;
+  @media screen and (max-width: 480px) {
+    display: none;
+  }
 `

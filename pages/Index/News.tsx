@@ -12,7 +12,9 @@ const News = () => {
     >
       <CategoryTitle>NEWS</CategoryTitle>
       <CategoryText>칠로엔은 행동합니다.</CategoryText>
-      <SubTexts  marginTop={16}>창작을 위해 발전하는 칠로엔의 모습을 지켜보세요.</SubTexts>
+      <SubTexts marginTop={16}>
+        창작을 위해 발전하는 칠로엔의 모습을 지켜보세요.
+      </SubTexts>
       <NewsSlider />
     </Screen>
   )

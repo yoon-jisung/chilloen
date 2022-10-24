@@ -3,6 +3,7 @@ import styled from 'styled-components'
 interface Props {
   children?: any
   style?: ScreenStyleType
+  id?: string
 }
 
 interface ScreenStyleType {
@@ -11,9 +12,9 @@ interface ScreenStyleType {
   textColor?: string
 }
 
-const Screen = ({ children, style }: Props) => {
+const Screen = ({ children, style, id }: Props) => {
   return (
-    <ScreenStyle style={style}>
+    <ScreenStyle style={style} id={id}>
       <div>{children}</div>
     </ScreenStyle>
   )
@@ -43,10 +44,9 @@ const ScreenStyle = styled.section<{ style?: ScreenStyleType }>`
       width: 1200px;
     }
     @media screen and (max-width: 1280px) {
-      width: 100%;   
-      flex-direction:column
+      width: 100%;
+      flex-direction: column;
     }
-
   }
   background-color: ${({ theme, style }) =>
     style?.bg ? style.bg : theme.colors.black};
