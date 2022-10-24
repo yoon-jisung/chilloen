@@ -11,7 +11,7 @@ const Intro = () => {
       <Screen>
         <FirstPageContainer>
           <span className="artistic-value">Artistic Value</span>
-          <Image
+          <ImageStyle
             src={title1Pic}
             alt="Artistic Value"
             placeholder="blur"
@@ -20,7 +20,7 @@ const Intro = () => {
           />
         </FirstPageContainer>
         <FirstPageContainer>
-          <Image
+          <ImageStyle
             src={title2Pic}
             alt="Challenge"
             placeholder="blur"
@@ -31,7 +31,7 @@ const Intro = () => {
         </FirstPageContainer>
         <FirstPageContainer>
           <span className="experience">Experience</span>
-          <Image
+          <ImageStyle
             src={title3Pic}
             alt="Experience"
             placeholder="blur"
@@ -55,22 +55,47 @@ const Intro = () => {
 }
 
 export default Intro
+const ImageStyle = styled(Image)`
+  @media screen and (max-width: ${({ theme }) => theme.deviceSizes.mobileL}) {
+    width: 340px;
+    min-height: 37px;
+  }
+`
 const CraveContainer = styled.div`
   margin-bottom: 7rem;
   span {
-    font-family: 'Pretendard';
-    font-style: normal;
     font-weight: 700;
-
     line-height: 100%;
     :nth-child(1) {
-      font-size: 60px;
+      font-size: 3.75rem;
     }
     :nth-child(2) {
-      font-size: 80px;
+      font-size: 5rem;
     }
     :nth-child(3) {
-      font-size: 120px;
+      font-size: 6.25rem;
+    }
+    @media screen and (max-width: 540px) {
+      :nth-child(1) {
+        font-size: 2.75rem;
+      }
+      :nth-child(2) {
+        font-size: 4rem;
+      }
+      :nth-child(3) {
+        font-size: 5.25rem;
+      }
+    }
+    @media screen and (max-width: 400px) {
+      :nth-child(1) {
+        font-size: 1.75rem;
+      }
+      :nth-child(2) {
+        font-size: 3rem;
+      }
+      :nth-child(3) {
+        font-size: 4.25rem;
+      }
     }
   }
 `
@@ -81,27 +106,29 @@ const FirstPageContainer = styled.div`
   justify-content: space-between;
   margin: 2vh 0;
   .artistic-value {
-    font-family: 'Pretendard';
-    font-style: normal;
     font-weight: 700;
-    font-size: 60px;
+    font-size: 3.75rem;
     line-height: 72px;
   }
 
   .challenge {
-    font-family: 'Pretendard';
-    font-style: normal;
     font-weight: 700;
-    font-size: 80px;
+    font-size: 5rem;
     line-height: 95px;
     text-align: right;
   }
 
   .experience {
-    font-family: 'Pretendard';
-    font-style: normal;
     font-weight: 700;
-    font-size: 100px;
+    font-size: 6.25rem;
     line-height: 119px;
+  }
+  span {
+    margin: 0 10px;
+  }
+  @media screen and (max-width: ${({ theme }) => theme.deviceSizes.mobileL}) {
+    span {
+      font-size: 3.75rem !important;
+    }
   }
 `

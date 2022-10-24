@@ -46,6 +46,7 @@ const Category = styled.div<{ flexDirection: string }>`
   width: 100%;
   color: black;
   @media screen and (max-width: 1280px) {
+    width: auto;
     flex-direction: ${({ flexDirection }) => flexDirection};
     margin-top: 30px;
     .row-reverse {
@@ -60,11 +61,19 @@ const Article = styled.article<{ mobileAlign: string }>`
   font-size: ${({ theme }) => theme.fontSizes.xl};
   text-align: start;
   @media screen and (max-width: 1280px) {
+    width: 100%;
     padding: 10px 2rem;
     margin: 1rem 0;
     text-align: center;
-    width: 100%;
     text-align: ${({ mobileAlign }) => mobileAlign};
+  }
+
+  @media screen and (max-width: ${({ theme }) => theme.deviceSizes.mobileL}) {
+    /* padding: 10px 2rem;
+    margin: 1rem 0;
+    text-align: center;
+    width: 100%;
+    text-align: ${({ mobileAlign }) => mobileAlign}; */
   }
 `
 const ImgWrapper = styled.div`
@@ -72,15 +81,13 @@ const ImgWrapper = styled.div`
   overflow: hidden;
 
   @media screen and (max-width: ${({ theme }) => theme.deviceSizes.tablet}) {
-    padding: 10px 2rem;
     width: 100%;
     height: auto;
     overflow: hidden;
     border-radius: 8px;
   }
   @media screen and (max-width: ${({ theme }) => theme.deviceSizes.mobileL}) {
-    padding: 10px 2rem;
-    width: 320px;
+    width: 100%;
     height: 180px;
     overflow: hidden;
     border-radius: 8px;

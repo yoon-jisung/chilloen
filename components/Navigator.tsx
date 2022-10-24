@@ -61,6 +61,12 @@ const Header = styled.header`
   align-items: center;
   justify-content: space-between;
   width: 1200px;
+  @media screen and (max-width: 1200px) {
+    padding: 10px 1rem;
+  }
+  @media screen and (max-width: 1280px) {
+    width: 100%;
+  }
 `
 const Bar = styled.span<{ scrollY: number }>`
   background: ${({ scrollY }) =>

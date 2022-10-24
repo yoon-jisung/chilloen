@@ -53,7 +53,7 @@ const GrLinkNextIcon = styled.div<{ marginLeft?: string }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 32px 0;
+  margin: 2rem 0;
   margin-left: ${({ marginLeft }) => (marginLeft ? marginLeft : '0px')};
   border-radius: 50%;
   box-shadow: 0 0 0 1px #ffffff;
