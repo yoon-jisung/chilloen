@@ -42,7 +42,7 @@ const Category = styled.div<{ flexDirection: string }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 84px;
+  margin: 5rem;
   width: 100%;
   color: black;
   @media screen and (max-width: 1280px) {

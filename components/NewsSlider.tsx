@@ -51,6 +51,22 @@ const NewsSlider = () => {
     slidesToScroll: 1,
     centerMode: true,
     centerPadding: '10px',
+    responsive: [
+      {
+        breakpoint: 460,
+        settings: {
+          arrows: false,
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          autoplay: true,
+          speed: 2000,
+          autoplaySpeed: 2000,
+          cssEase: 'linear',
+          centerPadding: '60px',
+          pauseOnHover: true,
+        },
+      },
+    ],
   }
 
   return (
@@ -155,7 +171,7 @@ const CustomSlider = styled(Slider)`
     width: 100%;
     height: 100%;
     border-radius: 14px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   }
 `
 
