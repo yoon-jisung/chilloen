@@ -17,7 +17,7 @@ const Layout = ({ children }: any) => {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.chilloen.com" />
         <meta property="og:title" content="칠로엔" />
-        <meta property="og:image" content="../public/images/chilloen-og.jpg" />
+        <meta property="og:image" content="http://drive.google.com/uc?export=view&id=1AIlbZAJpy4T3VnaMQB-iszbAeq9xpHfH" />
         <meta property="og:description" content="모든 창작이 울려퍼질 수 있는 세상을 만듭니다." />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
