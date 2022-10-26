@@ -8,7 +8,7 @@ import AboutUs2 from '../../public/images/about_us_2.jpg'
 const AboutUs = () => {
   return (
     <Screen style={{ bg: '#F6F6F6' }}>
-      <CategoryTitle>about us</CategoryTitle>
+      <CategoryTitle>About Us</CategoryTitle>
       <CategoryText>칠로엔은 생각합니다.</CategoryText>
       <Category flexDirection={'column'}>
         <ImgWrapper>
@@ -56,9 +56,9 @@ const Category = styled.div<{ flexDirection: string }>`
 `
 const Article = styled.article<{ mobileAlign: string }>`
   font-weight: 400;
-  line-height: 30px;
+  line-height: 2.3rem;
+  font-size: 1.5rem;
   width: 560px;
-  font-size: ${({ theme }) => theme.fontSizes.xl};
   text-align: start;
   @media screen and (max-width: 1280px) {
     width: 100%;

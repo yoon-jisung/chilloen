@@ -15,7 +15,7 @@ const Product = () => {
         screenHeight: 50,
       }}
     >
-      <CategoryTitle>product</CategoryTitle>
+      <CategoryTitle>Product</CategoryTitle>
       <CategoryText>칠로엔은 제시합니다.</CategoryText>
       <SubTexts marginTop={16}>
         음악가 출신 대표와 누구보다 창작에 대한 열망이 컸던 아티스트 출신

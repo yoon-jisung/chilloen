@@ -10,7 +10,7 @@ const News = () => {
         textColor: 'black',
       }}
     >
-      <CategoryTitle>NEWS</CategoryTitle>
+      <CategoryTitle>News</CategoryTitle>
       <CategoryText>칠로엔은 행동합니다.</CategoryText>
       <SubTexts marginTop={16}>
         창작을 위해 발전하는 칠로엔의 모습을 지켜보세요.

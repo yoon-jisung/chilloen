@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
 import { defaultInputsStyle } from 'styles/container'
+import cn from 'classnames'
 import emailjs from 'emailjs-com'
 
 const Regex = {
@@ -12,9 +13,10 @@ const EmailSendForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { isSubmitting },
+    watch,
     reset,
-  } = useForm()
+  } = useForm({ defaultValues: { email: '', name: '', texts: '' } })
   const form = useRef(null)
 
   const emailRegister = register('email', {
@@ -56,16 +58,20 @@ const EmailSendForm = () => {
 
   return (
     <ContactUsForm ref={form} onSubmit={handleSubmit(() => sendEmail())}>
-      <InputWrapper>
-        <Input
-          {...nameRegister}
-          className="first-child"
-          placeholder="Name"
-          id="name"
-          type="name"
-        />
-        <Input {...emailRegister} placeholder="Email" id="email" type="email" />
-      </InputWrapper>
+      <InputsWarpper>
+        <InputWrapper className="first-child">
+          <Input {...nameRegister} id="name" type="name" />
+          <InputLabel className={cn({ isActive: watch().name !== '' })}>
+            Name
+          </InputLabel>
+        </InputWrapper>
+        <InputWrapper>
+          <Input {...emailRegister} id="email" type="email" />
+          <InputLabel className={cn({ isActive: watch().email !== '' })}>
+            Email
+          </InputLabel>
+        </InputWrapper>
+      </InputsWarpper>
 
       <TextBox {...textsRegister} placeholder="Write Us a Message" />
       <ButtonWrapper>
@@ -76,6 +82,50 @@ const EmailSendForm = () => {
 }
 export default EmailSendForm
 
+const InputsWarpper = styled.div`
+  width: 100%;
+  display: flex;
+  position: relative;
+
+  .first-child {
+    margin-right: 30px;
+  }
+`
+const InputWrapper = styled.div`
+  width: 100%;
+  position: relative;
+  input:focus ~ label {
+    top: -23px;
+    left: 0;
+    color: #074478;
+    font-size: 12px;
+  }
+`
+const Input = styled.input`
+  ${defaultInputsStyle};
+  width: 100%;
+  height: 40px;
+`
+const TextBox = styled.textarea`
+  ${defaultInputsStyle};
+  resize: none;
+  height: 248px;
+`
+
+const InputLabel = styled.label`
+  position: absolute;
+  top: 0px;
+  left: 0.2rem;
+  padding: 10px 0;
+  font-size: 1rem;
+  color: ${({ theme }) => theme.colors.grey400};
+  pointer-events: none;
+  transition: 0.5s;
+  &.isActive {
+    opacity: 0;
+  }
+`
+
 const ContactUsForm = styled.form`
   display: flex;
   flex-direction: column;
@@ -84,39 +134,6 @@ const ContactUsForm = styled.form`
 const ButtonWrapper = styled.div`
   position: relative;
   min-width: 100%;
-`
-const InputWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  .first-child {
-    margin-right: 30px;
-  }
-`
-const Input = styled.input`
-  ${defaultInputsStyle};
-  width: 100%;
-  height: 58px;
-  margin-bottom: 1rem;
-  padding: 14px 16px;
-  ::placeholder {
-    color: ${({ theme }) => theme.colors.grey400};
-    font-family: 'Pretendard';
-    font-size: 16px;
-    font-weight: 400;
-  }
-`
-const TextBox = styled.textarea`
-  ${defaultInputsStyle};
-  resize: none;
-  height: 248px;
-  margin-bottom: 1rem;
-  padding: 14px 16px;
-  ::placeholder {
-    color: ${({ theme }) => theme.colors.grey400};
-    font-family: 'Pretendard';
-    font-size: 16px;
-    font-weight: 400;
-  }
 `
 
 const SendButton = styled.input`

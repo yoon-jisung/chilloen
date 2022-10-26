@@ -40,7 +40,7 @@ const ContactUs = () => {
         </ContactUsCardContainer>
       </Screen>
       <Screen style={{ bg: '#F6F6F6', screenHeight: 50 }}>
-        <CategoryTitle>Contact us</CategoryTitle>
+        <CategoryTitle>Contact Us</CategoryTitle>
         <CategoryText>칠로엔의 예술에 동참해보세요</CategoryText>
         <ContactUsFormWrapper>
           <EmailSendForm />

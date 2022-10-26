@@ -14,13 +14,21 @@ export const defaultContainer = css`
   }
 `
 export const defaultInputsStyle = css`
+  position: relative;
+  outline: none;
   border: none;
   border-bottom: 1px solid black;
-  outline: none;
-  -webkit-appearance: none;
   font-weight: 400;
+  margin-bottom: 1rem;
   letter-spacing: -0.02em;
+  border-radius: 0px;
   :focus {
-    border-bottom: 1px solid blue;
+    border-bottom: 1px solid #074478;
+  }
+  ::placeholder {
+    color: ${({ theme }) => theme.colors.grey400};
+    font-family: 'Pretendard';
+
+    font-weight: 400;
   }
 `
