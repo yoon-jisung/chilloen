@@ -10,9 +10,17 @@ const Layout = ({ children }: any) => {
         <title>chilloen</title>
         <meta name="description" content="chilloen" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        
+
         <meta name="naver-site-verification" content="fe14618c575d76620332f7b393dadeab47aa4ffd" />
         <meta name="google-site-verification" content="13832HiZZ56rPWHrhg3ZCFg55Rpm8TuEYG_bnNXLDOo" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.chilloen.com" />
+        <meta property="og:title" content="칠로엔" />
+        <meta property="og:image" content="../public/images/chilloen-og.jpg" />
+        <meta property="og:description" content="모든 창작이 울려퍼질 수 있는 세상을 만듭니다." />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
         <link
           rel="shortcut icon"
