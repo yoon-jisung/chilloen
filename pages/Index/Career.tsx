@@ -6,9 +6,12 @@ import { motion, useScroll, useSpring } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
 import css from 'styled-jsx/css'
 import { block } from 'styles/container'
+import useView from 'hooks/useView'
 
 const Career = () => {
   const careerScreenRef = useRef(null)
+  const screenRef = useRef(null)
+  const [target, view] = useView(screenRef)
   const { scrollYProgress } = useScroll({
     target: careerScreenRef,
     offset: ['end end', 'start start'],
@@ -21,15 +24,16 @@ const Career = () => {
     })
   }, [])
 
-  console.log(viewportWidth)
   return (
     <Container ref={careerScreenRef}>
       <LeftBlock containerWidth={viewportWidth > 50 ? 50 : viewportWidth} />
       <Image src={CareerImg} />
-      <Texts>
+      <Texts ref={screenRef}>
         <h1>새로운 도전을,</h1>
         <h1>칠로엔과 함께 하고 싶지 않으신가요?</h1>
-        <p>새로운 예술을, 위대한 창조를 , 삶을 표현할 꿈을 펼쳐주세요</p>
+        {view.width > 460 && (
+          <p>새로운 예술을, 위대한 창조를 , 삶을 표현할 꿈을 펼쳐주세요</p>
+        )}
 
         <GrLinkNextIcon
           onClick={() => window.open('https://chilloen.oopy.io/')}
@@ -85,8 +89,28 @@ const Texts = styled.div`
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -40%);
   color: ${({ theme }) => theme.colors.white500};
+  transition: all 0.5s;
+  h1 {
+    font-size: ${({ theme }) => theme.fontSizes.titleSize};
+    transition: all 0.5s;
+  }
+  p {
+    margin-top: 1rem;
+    font-size: ${({ theme }) => theme.fontSizes.xxl};
+    transition: all 0.5s;
+  }
+  @media screen and (max-width: 480px) {
+    transform: translate(-50%, -50%);
+    h1 {
+      font-size: 2rem;
+    }
+    p {
+      margin-top: 0.5rem;
+      font-size: ${({ theme }) => theme.fontSizes.xl};
+    }
+  }
 `
 
 const GrLinkNextIcon = styled.div<{ marginLeft?: string }>`
@@ -99,7 +123,7 @@ const GrLinkNextIcon = styled.div<{ marginLeft?: string }>`
     margin: 2.5rem;
   }
   @media screen and (max-width: 480px) {
-    margin: 1rem;
+    margin: 1.5rem;
   }
   cursor: pointer;
   .icon path {

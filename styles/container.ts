@@ -37,6 +37,6 @@ export const block = css`
   position: absolute;
   z-index: 1000;
   width: 25vw;
-  height: 540px;
+  height: 560px;
   background-color: #f6f6f6;
 `
