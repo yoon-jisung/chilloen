@@ -2,11 +2,30 @@ import styled from 'styled-components'
 import CareerImg from '../../public/images/job_bg.png'
 import Image from 'next/image'
 import { SlArrowRightCircle } from 'react-icons/sl'
+import { motion, useScroll, useSpring } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
+import css from 'styled-jsx/css'
+import { block } from 'styles/container'
 
 const Career = () => {
+  const careerScreenRef = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: careerScreenRef,
+    offset: ['end end', 'start start'],
+  })
+  const [viewportWidth, setViewportWidth] = useState(0)
+
+  useEffect(() => {
+    return scrollYProgress.onChange((latest) => {
+      setViewportWidth(latest * 100)
+    })
+  }, [])
+
+  console.log(viewportWidth)
   return (
-    <Container>
-      <Image src={CareerImg} objectFit="cover" objectPosition="center" />
+    <Container ref={careerScreenRef}>
+      <LeftBlock containerWidth={viewportWidth > 50 ? 50 : viewportWidth} />
+      <Image src={CareerImg} />
       <Texts>
         <h1>새로운 도전을,</h1>
         <h1>칠로엔과 함께 하고 싶지 않으신가요?</h1>
@@ -18,13 +37,34 @@ const Career = () => {
           <SlArrowRightCircle className="icon" />
         </GrLinkNextIcon>
       </Texts>
+
+      <RightBlock containerWidth={viewportWidth > 50 ? 50 : viewportWidth} />
     </Container>
   )
 }
 export default Career
 
-const Container = styled.div`
+const LeftBlock = styled.div<{ containerWidth: number }>`
+  ${block};
+  transform: translate3d(
+    ${({ containerWidth }) => -(containerWidth * 2) + '%'},
+    0px,
+    0px
+  );
+  left: 0;
+`
+const RightBlock = styled.div<{ containerWidth: number }>`
+  ${block};
+  transform: translate3d(
+    ${({ containerWidth }) => containerWidth * 2 + '%'},
+    0px,
+    0px
+  );
+  right: 0;
+`
+const Container = styled(motion.div)`
   position: relative;
+  display: flex;
   width: 100vw;
   height: 540px;
   overflow: hidden;

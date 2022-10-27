@@ -28,7 +28,15 @@ export const defaultInputsStyle = css`
   ::placeholder {
     color: ${({ theme }) => theme.colors.grey400};
     font-family: 'Pretendard';
-
     font-weight: 400;
   }
+`
+
+export const block = css`
+  top: 0;
+  position: absolute;
+  z-index: 1000;
+  width: 25vw;
+  height: 540px;
+  background-color: #f6f6f6;
 `

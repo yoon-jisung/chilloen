@@ -1,19 +1,32 @@
 import { Fragment } from 'react'
 import Screen from 'components/Screen'
-import { CategoryTitle, CategoryText } from 'pages'
+import { CategoryTitle, CategoryText, textAnimate, imageAnimate } from 'pages'
 import Image from 'next/image'
 import CreditLine from '../../public/images/investor_creditLine.png'
 import Davich from '../../public/images/investor_davich.png'
 import Metabuild from '../../public/images/investor_metabuild.png'
 import styled from 'styled-components'
 import EmailSendForm from 'components/EmailSendForm'
+import { motion } from 'framer-motion'
 
 const ContactUs = () => {
   return (
     <Fragment>
-      <Screen style={{ bg: '#F6F6F6', screenHeight: 50 }} id="contant-us">
-        <CategoryTitle>Invertors</CategoryTitle>
-        <ContactUsCardContainer>
+      <Screen style={{ bg: '#F6F6F6', screenHeight: 50 }} id="contact-us">
+        <CategoryTitle
+          variants={textAnimate}
+          initial={'offscreen'}
+          whileInView={'onscreen'}
+          viewport={{ once: true, amount: 0.8 }}
+        >
+          Invertors
+        </CategoryTitle>
+        <ContactUsCardContainer
+          variants={imageAnimate}
+          initial={'offscreen'}
+          whileInView={'onscreen'}
+          viewport={{ once: true, amount: 0.8 }}
+        >
           <Image
             src={CreditLine}
             alt="About Img"
@@ -40,8 +53,22 @@ const ContactUs = () => {
         </ContactUsCardContainer>
       </Screen>
       <Screen style={{ bg: '#F6F6F6', screenHeight: 50 }}>
-        <CategoryTitle>Contact Us</CategoryTitle>
-        <CategoryText>칠로엔의 예술에 동참해보세요</CategoryText>
+        <CategoryTitle
+          variants={textAnimate}
+          initial={'offscreen'}
+          whileInView={'onscreen'}
+          viewport={{ once: true, amount: 0.8 }}
+        >
+          Contact Us
+        </CategoryTitle>
+        <CategoryText
+          variants={textAnimate}
+          initial={'offscreen'}
+          whileInView={'onscreen'}
+          viewport={{ once: true, amount: 0.8 }}
+        >
+          칠로엔의 예술에 동참해보세요
+        </CategoryText>
         <ContactUsFormWrapper>
           <EmailSendForm />
         </ContactUsFormWrapper>
@@ -51,7 +78,7 @@ const ContactUs = () => {
 }
 export default ContactUs
 
-const ContactUsCardContainer = styled.div`
+const ContactUsCardContainer = styled(motion.div)`
   display: flex;
   @media screen and (max-width: 1280px) {
     flex-direction: column;

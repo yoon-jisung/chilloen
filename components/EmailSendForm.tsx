@@ -7,6 +7,7 @@ import emailjs from 'emailjs-com'
 
 const Regex = {
   email: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g,
+  name: /^[a-zA-Zㄱ-힣][a-zA-Zㄱ-힣 ]*$/,
 }
 
 const EmailSendForm = () => {
@@ -26,6 +27,7 @@ const EmailSendForm = () => {
 
   const nameRegister = register('name', {
     required: { value: true, message: '이름 입력해주세요.' },
+    pattern: { value: Regex.name, message: '이름 형식을 입력해주세요.' },
   })
 
   const textsRegister = register('texts', {

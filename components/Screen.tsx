@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 interface Props {
-  children?: any
+  children?: JSX.Element | JSX.Element[] | string | string[] | React.ReactNode
   style?: ScreenStyleType
   id?: string
 }
@@ -14,8 +14,8 @@ interface ScreenStyleType {
 
 const Screen = ({ children, style, id }: Props) => {
   return (
-    <ScreenStyle style={style} id={id}>
-      <div>{children}</div>
+    <ScreenStyle style={style}>
+      <div id={id}>{children}</div>
     </ScreenStyle>
   )
 }

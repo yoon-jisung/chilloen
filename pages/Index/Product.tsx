@@ -1,10 +1,11 @@
 import Screen from 'components/Screen'
 import Image from 'next/image'
-import { CategoryTitle, CategoryText, SubTexts } from 'pages'
+import { CategoryTitle, CategoryText, SubTexts, textAnimate } from 'pages'
 import styled from 'styled-components'
 import oddYardIcon from '../../public/images/oddyard_icon.png'
 import keeneatIcon from '../../public/images/keeneat_icon.png'
 import { SlArrowRightCircle } from 'react-icons/sl'
+import { motion } from 'framer-motion'
 
 const Product = () => {
   return (
@@ -15,19 +16,49 @@ const Product = () => {
         screenHeight: 50,
       }}
     >
-      <CategoryTitle>Product</CategoryTitle>
-      <CategoryText>칠로엔은 제시합니다.</CategoryText>
-      <SubTexts marginTop={16}>
+      <CategoryTitle
+        variants={textAnimate}
+        initial={'offscreen'}
+        whileInView={'onscreen'}
+        viewport={{ once: true, amount: 0.8 }}
+      >
+        Product
+      </CategoryTitle>
+      <CategoryText
+        variants={textAnimate}
+        initial={'offscreen'}
+        whileInView={'onscreen'}
+        viewport={{ once: true, amount: 0.8 }}
+      >
+        칠로엔은 제시합니다.
+      </CategoryText>
+      <SubTexts
+        marginTop={16}
+        variants={textAnimate}
+        initial={'offscreen'}
+        whileInView={'onscreen'}
+        viewport={{ once: true, amount: 0.8 }}
+      >
         음악가 출신 대표와 누구보다 창작에 대한 열망이 컸던 아티스트 출신
         팀원들이 모였습니다.
       </SubTexts>
-      <SubTexts>
+      <SubTexts
+        variants={textAnimate}
+        initial={'offscreen'}
+        whileInView={'onscreen'}
+        viewport={{ once: true, amount: 0.8 }}
+      >
         칠로엔은 그 누구보다 창작자들의 시선에서 바라보고 새로운 패러다임을
         제시합니다.
       </SubTexts>
 
       <Icons>
-        <IconCard>
+        <IconCard
+          variants={textAnimate}
+          initial={'offscreen'}
+          whileInView={'onscreen'}
+          viewport={{ once: true, amount: 0.8 }}
+        >
           <ImgWrapper>
             <Image
               src={oddYardIcon}
@@ -45,7 +76,12 @@ const Product = () => {
             <SlArrowRightCircle />
           </GrLinkNextIcon>
         </IconCard>
-        <IconCard>
+        <IconCard
+          variants={textAnimate}
+          initial={'offscreen'}
+          whileInView={'onscreen'}
+          viewport={{ once: true, amount: 0.8 }}
+        >
           <ImgWrapper>
             <Image
               src={keeneatIcon}
@@ -70,7 +106,7 @@ const Product = () => {
 
 export default Product
 
-const Icons = styled.div`
+const Icons = styled(motion.div)`
   display: flex;
   justify-content: space-between;
 
@@ -82,7 +118,7 @@ const Icons = styled.div`
   }
 `
 
-const IconCard = styled.div`
+const IconCard = styled(motion.div)`
   width: 500px;
   display: flex;
   align-items: center;
