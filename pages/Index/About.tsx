@@ -122,7 +122,10 @@ const Article = styled(motion.article)<{ mobileAlign: string }>`
     width: 100%;
     padding: 10px 2rem;
     margin: 1rem 0;
-    text-align: center;
+    text-align: ${({ mobileAlign }) => mobileAlign};
+  }
+  @media screen and (max-width: 480px) {
+    font-size: 1.2rem;
     text-align: ${({ mobileAlign }) => mobileAlign};
   }
 `
@@ -138,8 +141,7 @@ const ImgWrapper = styled(motion.div)`
   }
   @media screen and (max-width: 480px) {
     width: 100%;
-    height: 180px;
-    overflow: hidden;
+    overflow: overlay;
     border-radius: 8px;
   }
   > * {
