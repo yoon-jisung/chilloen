@@ -12,7 +12,13 @@ import { motion } from 'framer-motion'
 const ContactUs = () => {
   return (
     <Fragment>
-      <Screen style={{ bg: '#F6F6F6', screenHeight: 50 }} id="contact-us">
+      <Screen
+        style={{
+          bg: '#F6F6F6',
+          screenHeight: 50,
+        }}
+        id="contact-us"
+      >
         <CategoryTitle
           variants={textAnimate}
           initial={'offscreen'}
@@ -93,7 +99,10 @@ const ContactUsFormWrapper = styled.div`
   background: #ffffff;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
-  height: 480px;
+  height: 460px;
   border-radius: 8px;
   padding: 2rem 2rem;
+  @media screen and (max-width: 480px) {
+    height: 420px;
+  }
 `

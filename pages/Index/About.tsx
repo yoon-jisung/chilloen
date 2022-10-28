@@ -26,7 +26,10 @@ const AboutUs = () => {
     screen?.childNodes.forEach((el: any) => observer.observe(el))
   }, [])
   return (
-    <Screen style={{ bg: '#F6F6F6' }} id="about-us">
+    <Screen
+      style={{ bg: '#F6F6F6', justifyContent: 'flex-start' }}
+      id="about-us"
+    >
       <CategoryTitle
         variants={textAnimate}
         initial={'offscreen'}
@@ -100,6 +103,7 @@ const Category = styled(motion.div)<{ flexDirection: string }>`
   margin: 5rem;
   width: 100%;
   color: black;
+
   @media screen and (max-width: 1280px) {
     width: auto;
     flex-direction: ${({ flexDirection }) => flexDirection};
@@ -107,6 +111,9 @@ const Category = styled(motion.div)<{ flexDirection: string }>`
     .row-reverse {
       flex-direction: column-reverse !important;
     }
+  }
+  @media screen and (max-width: 480px) {
+    width: 100%;
   }
   .active {
     background-color: blue;
@@ -120,13 +127,18 @@ const Article = styled(motion.article)<{ mobileAlign: string }>`
   text-align: start;
   @media screen and (max-width: 1280px) {
     width: 100%;
-    padding: 10px 2rem;
+    padding: 10px 1.5rem;
     margin: 1rem 0;
     text-align: ${({ mobileAlign }) => mobileAlign};
   }
   @media screen and (max-width: 480px) {
     font-size: 1.2rem;
+    padding: 10px 1rem;
     text-align: ${({ mobileAlign }) => mobileAlign};
+  }
+  @media screen and (max-width: 355px) {
+    font-size: 1rem;
+    padding: 10px 0.8rem;
   }
 `
 const ImgWrapper = styled(motion.div)`
@@ -135,14 +147,12 @@ const ImgWrapper = styled(motion.div)`
 
   @media screen and (max-width: ${({ theme }) => theme.deviceSizes.tablet}) {
     width: 100%;
-    height: auto;
+    height: 100%;
     overflow: hidden;
-    border-radius: 8px;
   }
   @media screen and (max-width: 480px) {
     width: 100%;
-    overflow: overlay;
-    border-radius: 8px;
+    overflow: hidden;
   }
   > * {
     border-radius: 8px;

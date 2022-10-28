@@ -88,7 +88,6 @@ const InputsWarpper = styled.div`
   width: 100%;
   display: flex;
   position: relative;
-
   .first-child {
     margin-right: 30px;
   }
@@ -153,4 +152,5 @@ const SendButton = styled.input`
   font-size: 20px;
   line-height: 24px;
   text-align: center;
+  margin: 1rem 0;
 `

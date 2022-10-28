@@ -14,6 +14,7 @@ const Product = () => {
         bg: '#EBEBEB',
         textColor: 'black',
         screenHeight: 50,
+        justifyContent: 'flex-start',
       }}
     >
       <CategoryTitle

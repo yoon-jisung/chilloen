@@ -15,6 +15,8 @@ const Intro = () => {
             src={title1Pic}
             alt="Artistic Value"
             placeholder="blur"
+            layout={'fixed'}
+            objectFit="cover"
             width={780}
             height={56}
           />
@@ -24,6 +26,8 @@ const Intro = () => {
             src={title2Pic}
             alt="Challenge"
             placeholder="blur"
+            layout={'fixed'}
+            objectFit="cover"
             width={720}
             height={80}
           />
@@ -35,6 +39,8 @@ const Intro = () => {
             src={title3Pic}
             alt="Experience"
             placeholder="blur"
+            layout={'fixed'}
+            objectFit="cover"
             width={620}
             height={120}
           />
@@ -85,6 +91,9 @@ const FirstPageContainer = styled.div`
     font-weight: 700;
     font-size: 3.75rem;
     line-height: 72px;
+    @media screen and (max-width: 480px) {
+      line-height: 48px;
+    }
   }
 
   .challenge {
@@ -92,16 +101,24 @@ const FirstPageContainer = styled.div`
     font-size: 5rem;
     line-height: 95px;
     text-align: right;
+    @media screen and (max-width: 480px) {
+      line-height: 57px;
+    }
   }
 
   .experience {
     font-weight: 700;
     font-size: 6.25rem;
     line-height: 119px;
+    @media screen and (max-width: 480px) {
+      line-height: 67px;
+    }
   }
+
   span {
-    margin: 0 10px;
+    margin: 0 0.7rem;
   }
+
   @media screen and (max-width: 480px) {
     span {
       font-size: 3.75rem !important;

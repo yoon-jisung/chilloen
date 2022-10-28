@@ -8,6 +8,8 @@ const News = () => {
       style={{
         bg: 'F6F6F6',
         textColor: 'black',
+        screenHeight: 50,
+        justifyContent: 'flex-start',
       }}
     >
       <CategoryTitle
