@@ -10,7 +10,7 @@ import { motion } from 'framer-motion'
 const Product = () => {
   return (
     <Screen
-      style={{
+      styleProps={{
         bg: '#EBEBEB',
         textColor: 'black',
         screenHeight: 50,

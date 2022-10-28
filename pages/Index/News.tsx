@@ -5,7 +5,7 @@ import NewsSlider from 'components/NewsSlider'
 const News = () => {
   return (
     <Screen
-      style={{
+      styleProps={{
         bg: 'F6F6F6',
         textColor: 'black',
         screenHeight: 50,

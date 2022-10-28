@@ -10,7 +10,9 @@ const Footer = () => {
   const [target, view] = useView(screenRef)
 
   return (
-    <Screen style={{ screenHeight: 25, bg: '#333333', textColor: '#9E9E9E' }}>
+    <Screen
+      styleProps={{ screenHeight: 25, bg: '#333333', textColor: '#9E9E9E' }}
+    >
       <Container ref={screenRef}>
         {view.width > 1080 ? (
           <>

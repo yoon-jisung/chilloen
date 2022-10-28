@@ -13,7 +13,7 @@ const ContactUs = () => {
   return (
     <Fragment>
       <Screen
-        style={{
+        styleProps={{
           bg: '#F6F6F6',
           screenHeight: 50,
         }}
@@ -58,7 +58,7 @@ const ContactUs = () => {
           />
         </ContactUsCardContainer>
       </Screen>
-      <Screen style={{ bg: '#F6F6F6', screenHeight: 50 }}>
+      <Screen styleProps={{ bg: '#F6F6F6', screenHeight: 50 }}>
         <CategoryTitle
           variants={textAnimate}
           initial={'offscreen'}

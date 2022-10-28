@@ -27,7 +27,7 @@ const AboutUs = () => {
   }, [])
   return (
     <Screen
-      style={{ bg: '#F6F6F6', justifyContent: 'flex-start' }}
+      styleProps={{ bg: '#F6F6F6', justifyContent: 'flex-start' }}
       id="about-us"
     >
       <CategoryTitle

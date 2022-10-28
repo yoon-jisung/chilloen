@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 interface Props {
   children?: JSX.Element | JSX.Element[] | string | string[] | React.ReactNode
-  style?: ScreenStyleType
+  styleProps?: ScreenStyleType
   id?: string
 }
 
@@ -13,9 +13,9 @@ interface ScreenStyleType {
   justifyContent?: string
 }
 
-const Screen = ({ children, style, id }: Props) => {
+const Screen = ({ children, styleProps, id }: Props) => {
   return (
-    <ScreenStyle style={style}>
+    <ScreenStyle styleProps={styleProps}>
       <div id={id}>{children}</div>
     </ScreenStyle>
   )
@@ -23,8 +23,8 @@ const Screen = ({ children, style, id }: Props) => {
 
 export default Screen
 
-const ScreenStyle = styled.section<{ style?: ScreenStyleType }>`
-  min-height: ${({ style }) =>
+const ScreenStyle = styled.section<{ styleProps?: ScreenStyleType }>`
+  min-height: ${({ styleProps: style }) =>
     style?.screenHeight ? style.screenHeight + 'vh' : '100vh'};
   min-width: 100vw;
   padding: 10vh 2rem;
@@ -39,7 +39,8 @@ const ScreenStyle = styled.section<{ style?: ScreenStyleType }>`
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: ${({ style }) => style?.justifyContent || 'center'};
+    justify-content: ${({ styleProps: style }) =>
+      style?.justifyContent || 'center'};
     align-items: center;
 
     @media screen and (min-width: 1280px) {
@@ -50,8 +51,8 @@ const ScreenStyle = styled.section<{ style?: ScreenStyleType }>`
       flex-direction: column;
     }
   }
-  background-color: ${({ theme, style }) =>
+  background-color: ${({ theme, styleProps: style }) =>
     style?.bg ? style.bg : theme.colors.black};
-  color: ${({ theme, style }) =>
+  color: ${({ theme, styleProps: style }) =>
     style?.textColor ? style?.textColor : theme.colors.white500};
 `
