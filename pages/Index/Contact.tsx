@@ -25,7 +25,7 @@ const ContactUs = () => {
           whileInView={'onscreen'}
           viewport={{ once: true, amount: 0.8 }}
         >
-          Invertors
+          Investors
         </CategoryTitle>
         <ContactUsCardContainer
           variants={imageAnimate}
