@@ -12,8 +12,8 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     <Fragment>
       <Head>
         <title>chilloen</title>
-        <meta name="description" content="chilloen" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="chilloen" />
         <meta
           name="naver-site-verification"
           content="fe14618c575d76620332f7b393dadeab47aa4ffd"
@@ -35,6 +35,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
+
         <link
           rel="shortcut icon"
           href="https://storage.googleapis.com/cdn.appres.org/premium/526275b161effcdce43ecf71a8f0abf0f826ba46/icons/chillorn_logo.ico"
@@ -46,9 +47,10 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           type="image/x-icon"
         />
       </Head>
+
       <ThemeProvider theme={theme}>
-        <GlobalStyles />
         <Layout>
+          <GlobalStyles />
           <Component {...pageProps} />
         </Layout>
       </ThemeProvider>

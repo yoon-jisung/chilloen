@@ -25,6 +25,7 @@ export const GlobalStyles = createGlobalStyle`
     }
     body {
       background-color: #f6f6f6;
+  
     }
     * {
       box-sizing: border-box;
