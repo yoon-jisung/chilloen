@@ -31,7 +31,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         />
         <meta
           property="og:description"
-          content="모든 창작이 울려퍼질 수 있는 세상을 만듭니다."
+          content="모든 창작이 울려퍼질 수 있는 세상을 만듭니다"
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />

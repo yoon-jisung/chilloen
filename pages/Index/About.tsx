@@ -44,7 +44,7 @@ const AboutUs = () => {
         whileInView={'onscreen'}
         viewport={{ once: true, amount: 0.8 }}
       >
-        칠로엔은 생각합니다.
+        칠로엔은 생각합니다
       </CategoryText>
       <Category flexDirection={'column'}>
         <ImgWrapper
@@ -64,7 +64,7 @@ const AboutUs = () => {
         >
           <p>예술이란 누군가의 삶을 표현한 꿈이라고 생각합니다.</p>
           <p>그 꿈은 우리 주변을 맴돌고, 다른 이의 삶에</p>
-          <p>다름 꿈을 심어주기도 합니다.</p>
+          <p>다른 꿈을 심어주기도 합니다.</p>
         </Article>
       </Category>
       <Category flexDirection={'column-reverse'}>
