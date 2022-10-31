@@ -73,7 +73,7 @@ const ContactUs = () => {
           whileInView={'onscreen'}
           viewport={{ once: true, amount: 0.8 }}
         >
-          칠로엔의 예술에 동참해보세요
+          칠로엔의 예술에 동참해 보세요.
         </CategoryText>
         <ContactUsFormWrapper>
           <EmailSendForm />
