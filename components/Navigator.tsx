@@ -90,7 +90,6 @@ const Bar = styled.span<{ scrollY: number }>`
 `
 
 const ContactButton = styled.button<{ scrollY: number }>`
-  width: 100px;
   height: 40px;
   padding: 10px 12px;
   color: #ffffff;
