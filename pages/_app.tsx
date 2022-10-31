@@ -5,7 +5,7 @@ import Layout from 'components/Layout'
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyles } from '../styles/global-style'
 import theme from 'styles/theme'
-import { Head } from 'next/document'
+import Head from 'next/head'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
@@ -14,7 +14,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <title>chilloen</title>
         <meta name="description" content="chilloen" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-
         <meta
           name="naver-site-verification"
           content="fe14618c575d76620332f7b393dadeab47aa4ffd"
@@ -23,7 +22,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           name="google-site-verification"
           content="13832HiZZ56rPWHrhg3ZCFg55Rpm8TuEYG_bnNXLDOo"
         />
-
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.chilloen.com" />
         <meta property="og:title" content="칠로엔" />
@@ -37,13 +35,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-
         <link
           rel="shortcut icon"
           href="https://storage.googleapis.com/cdn.appres.org/premium/526275b161effcdce43ecf71a8f0abf0f826ba46/icons/chillorn_logo.ico"
           type="image/x-icon"
         />
-
         <link
           rel="icon"
           href="https://storage.googleapis.com/cdn.appres.org/premium/526275b161effcdce43ecf71a8f0abf0f826ba46/icons/chillorn_logo.ico"

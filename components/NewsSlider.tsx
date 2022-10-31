@@ -81,6 +81,7 @@ const NewsSlider = () => {
                 height={202}
                 objectFit="cover"
                 objectPosition="center"
+                alt={el.title}
               />
               <ArticleContents>
                 <div className="title">{el.title}</div>

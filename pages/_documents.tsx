@@ -1,11 +1,12 @@
 import Document, {
   Html,
-  Head,
   Main,
+  Head,
   NextScript,
   DocumentContext,
 } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
+import { GlobalStyles } from '../styles/global-style'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -16,11 +17,15 @@ class MyDocument extends Document {
       ctx.renderPage = () =>
         originalRenderPage({
           enhanceApp: (App) => (props) =>
-            sheet.collectStyles(<App {...props} />),
+            sheet.collectStyles(
+              <>
+                <GlobalStyles />
+                <App {...props} />
+              </>,
+            ),
         })
 
       const initialProps = await Document.getInitialProps(ctx)
-
       return {
         ...initialProps,
         styles: [initialProps.styles, sheet.getStyleElement()],
@@ -39,6 +44,7 @@ class MyDocument extends Document {
             type="text/css"
             href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
           />
+          {this.props.styles} {/* 이 한 줄만 추가하면 됩니다. */}
         </Head>
         <body>
           <Main />
