@@ -11,7 +11,8 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <Fragment>
       <Head>
-        <title>chilloen</title>
+        <title>칠로엔</title>
+        <meta name="description" content="예술에 가치를 더합니다." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="chilloen" />
         <meta
@@ -31,7 +32,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         />
         <meta
           property="og:description"
-          content="모든 창작이 울려퍼질 수 있는 세상을 만듭니다."
+          content="모든 창작이 울려퍼질 수 있는 세상을 만듭니다"
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />

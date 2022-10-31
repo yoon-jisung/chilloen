@@ -35,7 +35,7 @@ const News = () => {
         whileInView={'onscreen'}
         viewport={{ once: true, amount: 0.8 }}
       >
-        창작을 위해 발전하는 칠로엔의 모습을 지켜보세요.
+        창작을 위해 발전하는 칠로엔의 모습을 지켜보세요
       </SubTexts>
       <NewsSlider />
     </Screen>
