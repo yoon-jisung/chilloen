@@ -63,7 +63,7 @@ const AboutUs = () => {
           viewport={{ once: true, amount: 0.8 }}
         >
           <p>예술이란 누군가의 삶을 표현한 꿈이라고 생각합니다.</p>
-          <p>그 꿈은 우리 주변을 멤돌고, 다른이의 삶에</p>
+          <p>그 꿈은 우리 주변을 맴돌고, 다른 이의 삶에</p>
           <p>다름 꿈을 심어주기도 합니다.</p>
         </Article>
       </Category>
@@ -75,7 +75,7 @@ const AboutUs = () => {
           whileInView={'delayOnscreen'}
           viewport={{ once: true, amount: 0.8 }}
         >
-          <p>수많은 예술가들이 꿈을 꾸고, 쫒고 또 동경합니다.</p>
+          <p>수많은 예술가들이 꿈을 꾸고, 쫓고 또 동경합니다.</p>
           <p>다만, 그들의 위대한 창조물들이 우리 주변에서</p>
           <p>빛을 보기까지는 수많은 노력이 필요합니다.</p>
           <br></br>

@@ -30,7 +30,7 @@ const Navigator = () => {
           <Bar scrollY={scrollY} />
           <span>EN</span>
           <ContactButton scrollY={scrollY} onClick={handleFoucsContactView}>
-            contact us
+            Contact Us
           </ContactButton>
         </div>
       </Header>
