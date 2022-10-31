@@ -81,7 +81,7 @@ export const SubTexts = styled(motion.p)<{ marginTop?: number }>`
     line-height: 20px;
   }
   @media screen and (max-width: 480px) {
-    font-size: ${({ theme }) => theme.fontSizes.small};
+    font-size: 0.675rem;
     line-height: 20px;
   }
 `
