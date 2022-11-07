@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
 import chilloenLogo from '../public/images/logo.png'
