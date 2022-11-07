@@ -21,7 +21,7 @@ const Intro = () => {
             height={45}
           />
         </FirstPageContainer>
-        <FirstPageContainer>
+        {/* <FirstPageContainer>
           <ImageStyle
             src={title1Pic}
             alt="Artistic Value"
@@ -32,7 +32,7 @@ const Intro = () => {
             height={45}
           />
           <span className="artistic-value">Value</span>
-        </FirstPageContainer>
+        </FirstPageContainer> */}
 
         <FirstPageContainer>
           <ImageStyle
@@ -42,7 +42,7 @@ const Intro = () => {
             layout={'fixed'}
             objectFit="cover"
             width={720}
-            height={80}
+            height={50}
           />
           <span className="challenge">Challenge</span>
         </FirstPageContainer>
@@ -55,7 +55,7 @@ const Intro = () => {
             layout={'fixed'}
             objectFit="cover"
             width={620}
-            height={120}
+            height={50}
           />
         </FirstPageContainer>
       </Screen>
@@ -76,6 +76,7 @@ const Intro = () => {
 export default Intro
 const ImageStyle = styled(Image)`
   @media screen and (max-width: 480px) {
+    margin: 0 0.7rem;
     width: 340px;
     min-height: 37px;
   }
