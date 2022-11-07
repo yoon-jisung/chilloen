@@ -102,6 +102,7 @@ const FirstPageContainer = styled.div`
   justify-content: space-between;
   margin: 2vh 0;
   .artistic-value {
+    margin-right: 0.7rem;
     font-weight: 700;
     font-size: 3.75rem;
     line-height: 72px;
@@ -111,6 +112,7 @@ const FirstPageContainer = styled.div`
   }
 
   .challenge {
+    margin-left: 0.7rem;
     font-weight: 700;
     font-size: 5rem;
     line-height: 95px;
@@ -121,16 +123,13 @@ const FirstPageContainer = styled.div`
   }
 
   .experience {
+    margin-right: 0.7rem;
     font-weight: 700;
     font-size: 6.25rem;
     line-height: 119px;
     @media screen and (max-width: 480px) {
       line-height: 67px;
     }
-  }
-
-  span {
-    margin: 0 0.7rem;
   }
 
   @media screen and (max-width: 480px) {
