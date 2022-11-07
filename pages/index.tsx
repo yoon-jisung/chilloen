@@ -34,7 +34,7 @@ const Home: NextPage = () => {
 export default Home
 
 export const textAnimate = {
-  offscreen: { x: 10, y: 10, opacity: 0 },
+  offscreen: { y: 10, opacity: 0 },
   onscreen: {
     y: 0,
     opacity: 1,

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import title1Pic from '../../public/images/title_1.png'
 import title2Pic from '../../public/images/title_2.png'
 import title3Pic from '../../public/images/title_3.png'
+import { motion } from 'framer-motion'
 
 const Intro = () => {
   return (
@@ -48,9 +49,9 @@ const Intro = () => {
       </Screen>
       <Screen>
         <CraveContainer>
-          <span>Crave, </span>
-          <span>Crave, </span>
-          <span>Crave</span>
+          <motion.span>Crave, </motion.span>
+          <motion.span>Crave, </motion.span>
+          <motion.span>Crave</motion.span>
         </CraveContainer>
 
         <h1>모든 창작이</h1>
@@ -65,6 +66,9 @@ const ImageStyle = styled(Image)`
   @media screen and (max-width: 480px) {
     width: 340px;
     min-height: 37px;
+  }
+  .reveres {
+    transform: rotate(0.5turn);
   }
 `
 const CraveContainer = styled.div`

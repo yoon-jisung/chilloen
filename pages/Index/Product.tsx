@@ -6,9 +6,15 @@ import oddYardIcon from '../../public/images/oddyard_icon.png'
 import keeneatIcon from '../../public/images/keeneat_icon.png'
 import { SlArrowRightCircle } from 'react-icons/sl'
 import { motion } from 'framer-motion'
-import cn from 'classnames'
+import { useState, useEffect } from 'react'
 
 const Product = () => {
+  const [windowWidth, setWindowWidth] = useState(0)
+
+  useEffect(() => {
+    setWindowWidth(window.innerWidth)
+  }, [])
+
   return (
     <Screen
       styleProps={{
@@ -25,14 +31,26 @@ const Product = () => {
         transition={{ staggerChildren: 0.2 }}
       >
         <CategoryTitle variants={textAnimate}>Product</CategoryTitle>
-        <CategoryText variants={textAnimate}>칠로엔은 제시합니다.</CategoryText>
+        <CategoryText variants={textAnimate}>칠로엔은 제시합니다</CategoryText>
         <SubTexts marginTop={16} variants={textAnimate}>
           창조를 위한 또 다른 창조를 꿈 꿉니다.
         </SubTexts>
-        <SubTexts variants={textAnimate}>
-          칠로엔은 그 누구보다 창작자들의 시선에서 바라보 고 새로운 패러다임을
-          제시합니다.
-        </SubTexts>
+
+        {windowWidth > 460 ? (
+          <SubTexts variants={textAnimate}>
+            칠로엔은 그 누구보다 창작자들의 시선에서 바라보고 새로운 패러다임을
+            제시합니다.
+          </SubTexts>
+        ) : (
+          <>
+            <SubTexts variants={textAnimate}>
+              칠로엔은 그 누구보다 창작자들의 시선에서 바라보고
+            </SubTexts>
+            <SubTexts variants={textAnimate}>
+              새로운 패러다임을 제시합니다.
+            </SubTexts>
+          </>
+        )}
       </motion.div>
 
       <Icons

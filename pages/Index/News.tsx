@@ -20,7 +20,7 @@ const News = () => {
         transition={{ staggerChildren: 0.2, delayChildren: 1 }}
       >
         <CategoryTitle variants={textAnimate}>News</CategoryTitle>
-        <CategoryText variants={textAnimate}>칠로엔은 행동합니다.</CategoryText>
+        <CategoryText variants={textAnimate}>칠로엔은 행동합니다</CategoryText>
         <SubTexts marginTop={16} variants={textAnimate}>
           창작을 위해 발전하는 칠로엔의 모습을 지켜보세요
         </SubTexts>

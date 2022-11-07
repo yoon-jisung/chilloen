@@ -4,7 +4,6 @@ import Image from 'next/image'
 import { SlArrowRightCircle } from 'react-icons/sl'
 import { motion, useScroll, useSpring } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
-import css from 'styled-jsx/css'
 import { block } from 'styles/container'
 import useView from 'hooks/useView'
 

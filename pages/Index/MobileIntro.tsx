@@ -1,15 +1,24 @@
 import Screen from 'components/Screen'
 import styled from 'styled-components'
 import Image from 'next/image'
-import title1Pic from '../../public/images/title_1.png'
-import title2Pic from '../../public/images/title_2.png'
-import title3Pic from '../../public/images/title_3.png'
-
+import title1Pic from '../../public/images/mobile_title_1.png'
+import title2Pic from '../../public/images/mobile_title_2.png'
+import title3Pic from '../../public/images/mobile_title_3.png'
+import cn from 'classnames'
+import { motion } from 'framer-motion'
+import { textAnimate } from 'pages'
 const Intro = () => {
   return (
     <>
       <Screen>
-        <FirstPageContainer>
+        <FirstPageContainer
+          initial={{ x: -300 }}
+          whileInView={{ x: 0 }}
+          transition={{
+            ease: 'easeOut',
+          }}
+          viewport={{ once: false }}
+        >
           <span className="artistic-value">Artistic</span>
           <ImageStyle
             src={title1Pic}
@@ -21,8 +30,16 @@ const Intro = () => {
             height={45}
           />
         </FirstPageContainer>
-        {/* <FirstPageContainer>
+        <FirstPageContainer
+          initial={{ x: 300 }}
+          whileInView={{ x: 0 }}
+          transition={{
+            ease: 'easeOut',
+          }}
+          viewport={{ once: false }}
+        >
           <ImageStyle
+            className={cn({ reveres: true })}
             src={title1Pic}
             alt="Artistic Value"
             placeholder="blur"
@@ -31,10 +48,18 @@ const Intro = () => {
             width={780}
             height={45}
           />
-          <span className="artistic-value">Value</span>
-        </FirstPageContainer> */}
+          <span className="value">Value</span>
+        </FirstPageContainer>
 
-        <FirstPageContainer>
+        <FirstPageContainer
+          initial={{ x: -300 }}
+          whileInView={{ x: 0 }}
+          transition={{
+            ease: 'easeOut',
+          }}
+          viewport={{ once: false }}
+        >
+          <span className="challenge">Challenge</span>
           <ImageStyle
             src={title2Pic}
             alt="Challenge"
@@ -42,12 +67,17 @@ const Intro = () => {
             layout={'fixed'}
             objectFit="cover"
             width={720}
-            height={50}
+            height={45}
           />
-          <span className="challenge">Challenge</span>
         </FirstPageContainer>
-        <FirstPageContainer>
-          <span className="experience">Experience</span>
+        <FirstPageContainer
+          initial={{ x: 300 }}
+          whileInView={{ x: 0 }}
+          transition={{
+            ease: 'easeOut',
+          }}
+          viewport={{ once: false }}
+        >
           <ImageStyle
             src={title3Pic}
             alt="Experience"
@@ -55,25 +85,59 @@ const Intro = () => {
             layout={'fixed'}
             objectFit="cover"
             width={620}
-            height={50}
+            height={45}
           />
+          <span className="experience">Experience</span>
         </FirstPageContainer>
       </Screen>
       <Screen>
-        <CraveContainer>
-          <span>Crave, </span>
-          <span>Crave, </span>
-          <span>Crave</span>
+        <CraveContainer
+          initial={'offscreen'}
+          whileInView={'onscreen'}
+          transition={{
+            ease: 'easeOut',
+            staggerChildren: 0.2,
+          }}
+          viewport={{ once: false }}
+        >
+          <motion.span variants={textAnimate}>Crave, </motion.span>
+          <motion.span variants={textAnimate}>Crave, </motion.span>
+          <motion.span variants={textAnimate}>Crave</motion.span>
         </CraveContainer>
 
-        <h1>모든 창작이</h1>
-        <h1>울려 퍼질 수 있는 세상을 만듭니다</h1>
+        <motion.h1
+          variants={textAnimate}
+          initial={'offscreen'}
+          whileInView={'onscreen'}
+          transition={{
+            delay: 0.5,
+            ease: 'easeOut',
+            staggerChildren: 0.2,
+          }}
+          viewport={{ once: false }}
+        >
+          모든 창작이
+        </motion.h1>
+        <motion.h1
+          variants={textAnimate}
+          initial={'offscreen'}
+          whileInView={'onscreen'}
+          transition={{
+            ease: 'easeOut',
+            delay: 0.6,
+            staggerChildren: 0.2,
+          }}
+          viewport={{ once: false }}
+        >
+          울려 퍼질 수 있는 세상을 만듭니다
+        </motion.h1>
       </Screen>
     </>
   )
 }
 
 export default Intro
+
 const ImageStyle = styled(Image)`
   @media screen and (max-width: 480px) {
     margin: 0 0.7rem;
@@ -81,7 +145,7 @@ const ImageStyle = styled(Image)`
     min-height: 37px;
   }
 `
-const CraveContainer = styled.div`
+const CraveContainer = styled(motion.div)`
   margin-bottom: 7rem;
   span {
     font-weight: 700;
@@ -95,12 +159,21 @@ const CraveContainer = styled.div`
     }
   }
 `
-const FirstPageContainer = styled.div`
+
+const FirstPagseContainer = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`
+const FirstPageContainer = styled(motion.div)`
   display: flex;
   width: 100%;
   align-items: center;
   justify-content: space-between;
   margin: 2vh 0;
+  .reveres {
+    transform: rotate(0.5turn);
+  }
   .artistic-value {
     margin-right: 0.7rem;
     font-weight: 700;
@@ -119,6 +192,8 @@ const FirstPageContainer = styled.div`
     text-align: right;
     @media screen and (max-width: 480px) {
       line-height: 57px;
+      margin-left: 0;
+      margin-right: 0.7rem;
     }
   }
 
@@ -129,9 +204,19 @@ const FirstPageContainer = styled.div`
     line-height: 119px;
     @media screen and (max-width: 480px) {
       line-height: 67px;
+      margin-left: 0.7rem;
+      margin-right: 0;
     }
   }
-
+  .value {
+    margin-left: 0.7rem;
+    font-weight: 700;
+    font-size: 3.75rem;
+    line-height: 72px;
+    @media screen and (max-width: 480px) {
+      line-height: 48px;
+    }
+  }
   @media screen and (max-width: 480px) {
     span {
       font-size: 3.75rem !important;
