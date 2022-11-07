@@ -23,7 +23,6 @@ const Career = () => {
       setViewportWidth(latest * 100)
     })
   }, [])
-
   return (
     <Container ref={careerScreenRef}>
       <LeftBlock containerWidth={viewportWidth > 50 ? 50 : viewportWidth} />

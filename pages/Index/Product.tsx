@@ -6,6 +6,7 @@ import oddYardIcon from '../../public/images/oddyard_icon.png'
 import keeneatIcon from '../../public/images/keeneat_icon.png'
 import { SlArrowRightCircle } from 'react-icons/sl'
 import { motion } from 'framer-motion'
+import cn from 'classnames'
 
 const Product = () => {
   return (
@@ -17,49 +18,30 @@ const Product = () => {
         justifyContent: 'flex-start',
       }}
     >
-      <CategoryTitle
-        variants={textAnimate}
+      <motion.div
         initial={'offscreen'}
         whileInView={'onscreen'}
-        viewport={{ once: true, amount: 0.8 }}
+        viewport={{ once: true, amount: 1 }}
+        transition={{ staggerChildren: 0.2 }}
       >
-        Product
-      </CategoryTitle>
-      <CategoryText
-        variants={textAnimate}
-        initial={'offscreen'}
-        whileInView={'onscreen'}
-        viewport={{ once: true, amount: 0.8 }}
-      >
-        칠로엔은 제시합니다.
-      </CategoryText>
-      <SubTexts
-        marginTop={16}
-        variants={textAnimate}
-        initial={'offscreen'}
-        whileInView={'onscreen'}
-        viewport={{ once: true, amount: 0.8 }}
-      >
-        음악가 출신 대표와 누구보다 창작에 대한 열망이 컸던 아티스트 출신
-        팀원들이 모였습니다.
-      </SubTexts>
-      <SubTexts
-        variants={textAnimate}
-        initial={'offscreen'}
-        whileInView={'onscreen'}
-        viewport={{ once: true, amount: 0.8 }}
-      >
-        칠로엔은 그 누구보다 창작자들의 시선에서 바라보고 새로운 패러다임을
-        제시합니다.
-      </SubTexts>
+        <CategoryTitle variants={textAnimate}>Product</CategoryTitle>
+        <CategoryText variants={textAnimate}>칠로엔은 제시합니다.</CategoryText>
+        <SubTexts marginTop={16} variants={textAnimate}>
+          창조를 위한 또 다른 창조를 꿈 꿉니다.
+        </SubTexts>
+        <SubTexts variants={textAnimate}>
+          칠로엔은 그 누구보다 창작자들의 시선에서 바라보 고 새로운 패러다임을
+          제시합니다.
+        </SubTexts>
+      </motion.div>
 
-      <Icons>
-        <IconCard
-          variants={textAnimate}
-          initial={'offscreen'}
-          whileInView={'onscreen'}
-          viewport={{ once: true, amount: 0.8 }}
-        >
+      <Icons
+        initial={'offscreen'}
+        whileInView={'onscreen'}
+        transition={{ staggerChildren: 0.5, delayChildren: 1 }}
+        viewport={{ once: true, amount: 1 }}
+      >
+        <IconCard variants={textAnimate}>
           <ImgWrapper>
             <Image
               src={oddYardIcon}
@@ -77,12 +59,7 @@ const Product = () => {
             <SlArrowRightCircle />
           </GrLinkNextIcon>
         </IconCard>
-        <IconCard
-          variants={textAnimate}
-          initial={'offscreen'}
-          whileInView={'onscreen'}
-          viewport={{ once: true, amount: 0.8 }}
-        >
+        <IconCard variants={textAnimate}>
           <ImgWrapper>
             <Image
               src={keeneatIcon}

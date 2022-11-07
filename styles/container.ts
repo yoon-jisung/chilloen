@@ -17,7 +17,8 @@ export const defaultInputsStyle = css`
   position: relative;
   outline: none;
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #f6f6f6;
+  transition: all 0.5s;
   font-weight: 400;
   margin-bottom: 1rem;
   letter-spacing: -0.02em;
@@ -49,6 +50,6 @@ export const block = css`
     width: 20vw;
   }
   @media screen and (max-width: 480px) {
-    width: 20vw;
+    width: 0vw;
   }
 `

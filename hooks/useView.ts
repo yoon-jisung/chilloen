@@ -1,4 +1,10 @@
-import { MutableRefObject, useLayoutEffect, useRef, useState } from 'react'
+import {
+  MutableRefObject,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from 'react'
 import useResizeObserver from '@react-hook/resize-observer'
 
 interface Size {
@@ -18,7 +24,7 @@ function useView<T extends HTMLElement = HTMLDivElement>(
     setSize({ width: Math.round(width), height: Math.round(height) })
   }
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     target.current && setRoundedSize(target.current.getBoundingClientRect())
   }, [target])
 

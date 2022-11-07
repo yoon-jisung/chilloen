@@ -23,7 +23,7 @@ const ContactUs = () => {
           variants={textAnimate}
           initial={'offscreen'}
           whileInView={'onscreen'}
-          viewport={{ once: true, amount: 0.8 }}
+          viewport={{ once: true }}
         >
           Investors
         </CategoryTitle>
@@ -33,29 +33,40 @@ const ContactUs = () => {
           whileInView={'onscreen'}
           viewport={{ once: true, amount: 0.8 }}
         >
-          <Image
-            src={CreditLine}
-            alt="About Img"
-            placeholder="blur"
-            width={280}
-            height={100}
-          />
-
-          <Image
-            src={Davich}
-            alt="About Img"
-            placeholder="blur"
-            width={280}
-            height={100}
-          />
-
-          <Image
-            src={Metabuild}
-            alt="About Img"
-            placeholder="blur"
-            width={280}
-            height={100}
-          />
+          <ImagesWarpper
+            initial={'opacityOffscreen'}
+            whileInView={'opacityOnscreen'}
+            viewport={{ once: true, amount: 1 }}
+            transition={{ staggerChildren: 0.2 }}
+          >
+            <ImageWarpper variants={imageAnimate}>
+              <Image
+                src={CreditLine}
+                alt="About Img"
+                placeholder="blur"
+                width={280}
+                height={100}
+              />
+            </ImageWarpper>
+            <ImageWarpper variants={imageAnimate}>
+              <Image
+                src={Davich}
+                alt="About Img"
+                placeholder="blur"
+                width={280}
+                height={100}
+              />
+            </ImageWarpper>
+            <ImageWarpper variants={imageAnimate}>
+              <Image
+                src={Metabuild}
+                alt="About Img"
+                placeholder="blur"
+                width={280}
+                height={100}
+              />
+            </ImageWarpper>
+          </ImagesWarpper>
         </ContactUsCardContainer>
       </Screen>
       <Screen styleProps={{ bg: '#F6F6F6', screenHeight: 50 }}>
@@ -84,6 +95,19 @@ const ContactUs = () => {
 }
 export default ContactUs
 
+const ImagesWarpper = styled(motion.div)`
+  display: flex;
+  @media screen and (max-width: 1280px) {
+    flex-direction: column;
+  }
+`
+
+const ImageWarpper = styled(motion.div)`
+  display: flex;
+  @media screen and (max-width: 1280px) {
+    flex-direction: column;
+  }
+`
 const ContactUsCardContainer = styled(motion.div)`
   display: flex;
   @media screen and (max-width: 1280px) {

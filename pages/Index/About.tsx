@@ -46,47 +46,37 @@ const AboutUs = () => {
       >
         칠로엔은 생각합니다
       </CategoryText>
-      <Category flexDirection={'column'}>
-        <ImgWrapper
-          variants={imageAnimate}
-          initial={'offscreen'}
-          whileInView={'onscreen'}
-          viewport={{ once: true, amount: 1 }}
-        >
+      <Category
+        flexDirection={'column'}
+        initial={'offscreen'}
+        whileInView={'onscreen'}
+        viewport={{ once: true }}
+        transition={{ staggerChildren: 0.5 }}
+      >
+        <ImgWrapper variants={imageAnimate}>
           <Image src={AboutUs1} alt="AboutUs1" width={560} height={280} />
         </ImgWrapper>
-        <Article
-          mobileAlign={'start'}
-          variants={textAnimate}
-          initial={'offscreen'}
-          whileInView={'delayOnscreen'}
-          viewport={{ once: true, amount: 0.8 }}
-        >
-          <p>예술이란 누군가의 삶을 표현한 꿈이라고 생각합니다.</p>
+        <Article mobileAlign={'start'} variants={textAnimate}>
+          <p>예술이란 누군가의 삶을 표현한 꿈입니다.</p>
           <p>그 꿈은 우리 주변을 맴돌고, 다른 이의 삶에</p>
           <p>다른 꿈을 심어주기도 합니다.</p>
         </Article>
       </Category>
-      <Category flexDirection={'column-reverse'}>
-        <Article
-          mobileAlign={'end'}
-          variants={textAnimate}
-          initial={'offscreen'}
-          whileInView={'delayOnscreen'}
-          viewport={{ once: true, amount: 0.8 }}
-        >
+      <Category
+        flexDirection={'column-reverse'}
+        initial={'offscreen'}
+        whileInView={'onscreen'}
+        viewport={{ once: true }}
+        transition={{ staggerChildren: 0.5, staggerDirection: -1 }}
+      >
+        <Article mobileAlign={'end'} variants={textAnimate}>
           <p>수많은 예술가들이 꿈을 꾸고, 쫓고 또 동경합니다.</p>
           <p>다만, 그들의 위대한 창조물들이 우리 주변에서</p>
           <p>빛을 보기까지는 수많은 노력이 필요합니다.</p>
           <br></br>
-          <p>그래서 저희 칠로엔은 존재합니다.</p>
+          <p>칠로엔은 그들을 위한 서비스를 창조합니다.</p>
         </Article>
-        <ImgWrapper
-          variants={imageAnimate}
-          initial={'offscreen'}
-          whileInView={'onscreen'}
-          viewport={{ once: true, amount: 1 }}
-        >
+        <ImgWrapper variants={imageAnimate}>
           <Image src={AboutUs2} alt="AboutUs2" width={560} height={280} />
         </ImgWrapper>
       </Category>

@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { Fragment } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Intro from 'pages/Index/Intro'
 import AboutUs from 'pages/Index/About'
@@ -9,11 +9,19 @@ import Career from 'pages/Index/Career'
 import ContactUs from 'pages/Index/Contact'
 import { calcRem } from 'styles/theme'
 import { motion } from 'framer-motion'
+import MobileIntro from './Index/MobileIntro'
 
 const Home: NextPage = () => {
+  const [windowWidth, setWindowWidth] = useState(0)
+
+  useEffect(() => {
+    setWindowWidth(window.innerWidth)
+  }, [])
+
+  console.log(windowWidth)
   return (
     <Fragment>
-      <Intro />
+      {windowWidth > 480 ? <Intro /> : <MobileIntro />}
       <AboutUs />
       <Product />
       <News />
@@ -26,7 +34,7 @@ const Home: NextPage = () => {
 export default Home
 
 export const textAnimate = {
-  offscreen: { y: 10, opacity: 0 },
+  offscreen: { x: 10, y: 10, opacity: 0 },
   onscreen: {
     y: 0,
     opacity: 1,
@@ -53,6 +61,13 @@ export const imageAnimate = {
       duration: 0.5,
     },
   },
+  opacityOffscreen: { opacity: 0 },
+  opacityOnscreen: {
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+    },
+  },
 }
 
 export const CategoryTitle = styled(motion.div)`
@@ -61,12 +76,14 @@ export const CategoryTitle = styled(motion.div)`
   padding: 20px 0;
   font-weight: 700;
   font-size: ${({ theme }) => theme.fontSizes.xxxl};
+  text-align: center;
 `
 export const CategoryText = styled(motion.div)`
   color: ${({ theme }) => theme.colors.black};
   font-weight: 700;
   font-size: ${({ theme }) => theme.fontSizes.titleSize};
   line-height: 48px;
+  text-align: center;
 `
 
 export const SubTexts = styled(motion.p)<{ marginTop?: number }>`
@@ -77,11 +94,11 @@ export const SubTexts = styled(motion.p)<{ marginTop?: number }>`
   text-align: center;
 
   @media screen and (max-width: 1280px) {
-    font-size: ${({ theme }) => theme.fontSizes.base};
+    font-size: ${({ theme }) => theme.fontSizes.lg};
     line-height: 20px;
   }
   @media screen and (max-width: 480px) {
-    font-size: 0.675rem;
+    font-size: ${({ theme }) => theme.fontSizes.lg};
     line-height: 20px;
   }
 `

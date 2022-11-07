@@ -10,7 +10,7 @@ const Intro = () => {
     <>
       <Screen>
         <FirstPageContainer>
-          <span className="artistic-value">Artistic Value</span>
+          <span className="artistic-value">Artistic</span>
           <ImageStyle
             src={title1Pic}
             alt="Artistic Value"
@@ -18,9 +18,22 @@ const Intro = () => {
             layout={'fixed'}
             objectFit="cover"
             width={780}
-            height={56}
+            height={45}
           />
         </FirstPageContainer>
+        <FirstPageContainer>
+          <ImageStyle
+            src={title1Pic}
+            alt="Artistic Value"
+            placeholder="blur"
+            layout={'fixed'}
+            objectFit="cover"
+            width={780}
+            height={45}
+          />
+          <span className="artistic-value">Value</span>
+        </FirstPageContainer>
+
         <FirstPageContainer>
           <ImageStyle
             src={title2Pic}
